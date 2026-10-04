@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>87版《红楼梦》资料馆 · Dream of the Red Chamber 1987</title>
+<style>
+:root{
+  --bg:#faf7f2; --card:#ffffff; --ink:#2b2b2b; --ink2:#6b6b6b;
+  --line:#e8e2d8; --accent:#b03a2e; --accent2:#8a2f25; --gold:#b98a2f;
+  --chip-core:#b03a2e; --chip-important:#b98a2f; --chip-entry:#7a7a7a; --chip-mentioned:#b5b5b5;
+  --green:#2f6b3a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:var(--accent2);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* 导航 */
+nav{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.nav-in{display:flex;align-items:center;gap:3px;max-width:1180px;margin:0 auto;padding:6px 10px;overflow-x:auto;white-space:nowrap;flex-wrap:wrap;row-gap:4px}
+.brand{font-weight:700;color:var(--accent2);font-size:13px;flex-shrink:0;margin-right:5px}
+.brand small{display:block;font-weight:400;color:var(--ink2);font-size:8.5px;letter-spacing:.2px}
+nav a.menu{color:var(--ink);font-size:12px;padding:3px 5px;border-radius:6px;flex-shrink:0}
+nav a.menu:hover{background:#f0e9dd;text-decoration:none}
+nav a.menu.on{background:var(--accent);color:#fff}
+.langbtn{margin-left:auto;background:var(--accent2);color:#fff;border:none;border-radius:6px;padding:5px 10px;font-size:12px;cursor:pointer;flex-shrink:0}
+.langbtn:hover{background:#7a3a2c}
+
+/* 通用 */
+h1{font-size:30px;margin:8px 0 4px;letter-spacing:1px}
+h2{font-size:22px;margin:28px 0 12px;color:var(--accent2);border-left:4px solid var(--accent);padding-left:10px}
+h3{font-size:16px;margin:14px 0 6px}
+.sub{color:var(--ink2);font-size:13px;margin-bottom:18px}
+.en{font-family:Georgia,"Times New Roman",serif;color:var(--ink2);font-size:13px;letter-spacing:.3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:16px}
+.muted{color:var(--ink2)}
+.small{font-size:12.5px;color:var(--ink2)}
+.tag{display:inline-block;padding:1px 8px;border-radius:20px;font-size:12px;color:#fff;margin-right:6px}
+.t-core{background:var(--chip-core)}.t-important{background:var(--chip-important)}
+.t-entry{background:var(--chip-entry)}.t-mentioned{background:var(--chip-mentioned)}
+.btn{display:inline-block;padding:8px 16px;border-radius:8px;background:var(--accent);color:#fff;font-size:14px;border:none;cursor:pointer}
+.btn:hover{background:var(--accent2);text-decoration:none}
+.back{font-size:13px;margin-bottom:8px;display:inline-block}
+
+/* 首页 */
+.hero{background:linear-gradient(160deg,#3a2b25 0%,#6b4a3a 100%);color:#f5eee4;border-radius:14px;padding:44px 40px;margin:24px 0 20px;position:relative;overflow:hidden}
+.hero h1{font-size:36px;color:#fff;letter-spacing:4px;margin:0 0 6px}
+.hero .en{color:#d9c9b8;font-size:15px;letter-spacing:1px}
+.hero p.zh{margin-top:12px;color:#efe4d6;font-size:15px;max-width:760px}
+.hero p.en2{margin-top:10px;color:#cbb9a5;font-size:13px;max-width:760px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 8px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;text-align:center;padding:18px 10px}
+.stat b{font-size:30px;color:var(--accent2);display:block;line-height:1.2}
+.stat span{font-size:12.5px;color:var(--ink2)}
+.gates{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:8px}
+.gate{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 14px;transition:.15s}
+.gate:hover{transform:translateY(-2px);border-color:var(--accent);text-decoration:none}
+.gate b{display:block;font-size:15px;color:var(--ink)}
+.gate small{color:var(--ink2);font-size:12px}
+
+/* 图鉴 */
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.controls input,.controls select{padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:14px}
+.controls input{flex:1;min-width:220px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chips button{border:1px solid var(--line);background:#fff;border-radius:20px;padding:4px 14px;font-size:13px;cursor:pointer;color:var(--ink2)}
+.chips button.on{border-color:var(--accent);color:var(--accent2);background:#f7ece7}
+.people{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px;cursor:pointer;transition:.15s;display:flex;gap:12px;align-items:flex-start}
+.pcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.pcard .pt{width:52px;height:68px;object-fit:cover;border-radius:6px;flex-shrink:0;background:#efe9dd}
+.pcard .ptx{flex:1;min-width:0}
+.pcard b{font-size:16px}
+.pcard .actor{font-size:13px;color:var(--ink2);margin:2px 0 6px}
+.pcard .rel{font-size:12px;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.phflag{font-size:11px;margin-top:4px}
+.phflag.has{color:var(--green)}
+.phflag.no{color:#a89b8b}
+.photos-mini{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:6px}
+.photos-mini img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:8px;background:#efe9dd}
+.photos-mini figcaption{font-size:11.5px;color:var(--ink2);margin-top:4px;line-height:1.5}
+.ph-filter{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.ph-filter input{flex:1;min-width:220px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:14px}
+.ph-filter select{padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:14px}
+
+/* 表格 */
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f3ede2;font-weight:600;white-space:nowrap}
+tr:nth-child(even) td{background:#fbf8f2}
+
+/* 分集 */
+.ep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.ep{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.ep b{color:var(--accent2);display:block}
+.ep p{font-size:13px;color:var(--ink);margin-top:6px;display:none;white-space:normal;overflow-wrap:break-word;word-break:break-word}
+.ep.open p{display:block}
+.ep button{display:block;margin-top:8px;background:none;border:none;color:var(--accent2);font-size:12.5px;cursor:pointer;padding:0}
+
+/* 时间线 */
+.tl{position:relative;margin-left:12px;padding-left:26px;border-left:2px solid var(--line)}
+.tl .item{position:relative;margin-bottom:20px}
+.tl .item::before{content:"";position:absolute;left:-33px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.tl .year{font-weight:700;color:var(--accent2);font-size:15px}
+.tl .txt{font-size:14px;margin-top:2px}
+
+/* 音乐 */
+.music-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.mtrack{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px}
+.mtrack .no{color:var(--gold);font-weight:700;font-size:13px}
+.mtrack b{font-size:15px;margin-left:4px}
+.lyr-btn{margin-top:8px;background:none;border:none;color:var(--accent2);font-size:12.5px;cursor:pointer;padding:0;text-decoration:underline}
+.lyrics{display:none;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+.lyrics.open{display:block}
+.lyrics p{margin:3px 0;font-size:13px;line-height:1.65}
+
+/* 轶闻状态 */
+.st{display:inline-block;font-size:11.5px;padding:1px 8px;border-radius:12px;margin-left:6px;vertical-align:2px}
+.st-ok{background:#e6efe6;color:#2f6b3a}.st-part{background:#f6ecd9;color:#8a6a1f}
+
+/* 关系图 */
+.fig-scroll{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px}
+.fig-note{font-size:12px;color:var(--ink2);margin-top:6px}
+
+/* 图库 */
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.photo{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.photo img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;background:#f1ece2}
+.photo .cap{padding:10px 12px;font-size:13px}
+.photo .cap b{font-size:14px}
+.photo .cap .src{font-size:11.5px;color:var(--ink2);margin-top:4px;word-break:break-all}
+
+footer{border-top:1px solid var(--line);margin-top:40px;padding:22px 0 40px;color:var(--ink2);font-size:12.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.jinling-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-bottom:22px}
+.jcard blockquote.poem{border-left:3px solid #b98a2f;margin:10px 0;padding:8px 12px;background:#faf5ee;font-size:15px;line-height:1.9;color:#4a3f33}
+.jcard .song{white-space:pre-wrap;line-height:1.75;margin:8px 0}
+@media(max-width:720px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:30px 22px}
+  .hero h1{font-size:28px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <div class="brand" id="brandZh">87版《红楼梦》资料馆<small>Dream of the Red Chamber · 1987</small></div>
+    <a class="menu" data-v="home" href="#/" data-zh="首页" data-en="Home">首页</a>
+    <a class="menu" data-v="list" href="#/list" data-zh="人物图鉴" data-en="Characters">人物图鉴</a>
+    <a class="menu" data-v="episodes" href="#/episodes" data-zh="分集剧情" data-en="Episodes">分集剧情</a>
+    <a class="menu" data-v="relations" href="#/relations" data-zh="人物关系" data-en="Relations">人物关系</a>
+    <a class="menu" data-v="timeline" href="#/timeline" data-zh="时间线" data-en="Timeline">时间线</a>
+    <a class="menu" data-v="music" href="#/music" data-zh="音乐" data-en="Music">音乐</a>
+    <a class="menu" data-v="behind" href="#/behind" data-zh="幕后故事·轶闻" data-en="Behind &amp; Crew">幕后故事·轶闻</a>
+    <a class="menu" data-v="memorial" href="#/memorial" data-zh="纪念" data-en="Memorial">纪念</a>
+    <a class="menu" data-v="compare" href="#/compare" data-zh="结局对照" data-en="Endings">结局对照</a>
+    <a class="menu" data-v="sources" href="#/sources" data-zh="信源·勘误" data-en="Sources">信源·勘误</a>
+    <a class="menu" data-v="photos" href="#/photos" data-zh="图库" data-en="Gallery">图库</a>
+    <button class="langbtn" id="langbtn" onclick="toggleLang()">EN</button>
+  </div>
+</nav>
+
+<main id="app" class="wrap"></main>
+
+<footer>
+  <div class="wrap">
+    <div>87版《红楼梦》资料馆 · <span id="ftZh">本地静态资料站（仅本地展示，不发布线上）</span><span id="ftEn" style="display:none">Local static archive · for local viewing only</span></div>
+    <div><span id="fvZh">数据版本 v1.5 · 更新 2026-10-03 · 图库 149 张 · 信源分级与勘误见「信源·勘误」页</span><span id="fvEn" style="display:none">Data v1.5 · updated 2026-10-03 · 149 photos · source grades &amp; errata in "Sources"</span></div>
+  </div>
+</footer>
+
+<script src="data/characters.js?v=1.5"></script>
+<script src="data/episodes.js?v=1.5"></script>
+<script src="data/timeline.js?v=1.5"></script>
+<script src="data/music.js?v=1.5"></script>
+<script src="data/content.js?v=1.5"></script>
+<script src="data/profiles.js?v=1.5"></script>
+<script src="data/photos.js?v=1.5"></script>
+<script src="data/jinling.js?v=1.5"></script>
+<script>
+var H = window.HLM87;
+var lang = "zh";
+function L(zh, en){ return lang === "en" ? en : zh; }
+var STATUS = {core:"核心人物", important:"重要人物", entry:"一般人物", mentioned:"仅提及（原著提及，87版未出场/资料暂缺）"};
+var STATUS_EN = {core:"Core", important:"Major", entry:"Regular", mentioned:"Mentioned only"};
+function statusLabel(k){ return L(STATUS[k] ? STATUS[k].split("（")[0] : k, STATUS_EN[k] || k); }
+function toggleLang(){
+  lang = lang === "zh" ? "en" : "zh";
+  document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+  document.getElementById("langbtn").textContent = lang === "zh" ? "EN" : "中文";
+  ["ftZh","fvZh"].forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display = lang === "zh" ? "" : "none"; });
+  ["ftEn","fvEn"].forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display = lang === "en" ? "" : "none"; });
+  document.querySelectorAll("nav a.menu").forEach(function(a){
+    a.textContent = a.getAttribute(lang === "zh" ? "data-zh" : "data-en");
+  });
+  render();
+}
+var GROUPS = []; (H.characters||[]).forEach(function(c){ if(GROUPS.indexOf(c.group)<0) GROUPS.push(c.group); });
+var listState = {q:"", group:"全部", status:"全部"};
+var photoState = {q:"", kind:"全部"};
+/* 图片索引：char -> photos[]（用于图鉴缩略图 / 详情页剧照 / 图库检索） */
+var photosIndex = {};
+(H.photos.items||[]).forEach(function(p){ if(!photosIndex[p.char]) photosIndex[p.char]=[]; photosIndex[p.char].push(p); });
+function photoByChar(name){ var a=photosIndex[name]; return a&&a.length?a[0]:null; }
+function photosOf(name){ return photosIndex[name]||[]; }
+function photoAll(name){ return photosIndex[name]||[]; }
+
+function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function $(id){ return document.getElementById(id); }
+
+/* ---------------- 路由 ---------------- */
+function render(){
+  var h = location.hash || "#/";
+  var parts = h.replace(/^#\/?/,"").split("/");
+  var v = parts[0] || "home";
+  var el = $("app");
+  document.querySelectorAll("nav a.menu").forEach(function(a){
+    a.classList.toggle("on", a.dataset.v === v);
+  });
+  switch(v){
+    case "home": el.innerHTML = viewHome(); break;
+    case "list": el.innerHTML = viewList(); break;
+    case "char": el.innerHTML = viewChar(decodeURIComponent(parts[1]||"")); break;
+    case "episodes": el.innerHTML = viewEpisodes(); break;
+    case "relations": el.innerHTML = viewRelations(); break;
+    case "timeline": el.innerHTML = viewTimeline(); break;
+    case "music": el.innerHTML = viewMusic(); break;
+    case "behind":
+    case "gossip":
+    case "crew": el.innerHTML = viewBehindAll(); break;
+    case "memorial": el.innerHTML = viewMemorial(); break;
+    case "compare": el.innerHTML = viewCompare(); break;
+    case "sources": el.innerHTML = viewSources(); break;
+    case "photos": el.innerHTML = viewPhotos(); break;
+    default: el.innerHTML = viewHome();
+  }
+  window.scrollTo(0,0);
+  if(v==="list") initList();
+  if(v==="photos") initPhotos();
+}
+window.addEventListener("hashchange", render);
+
+/* ---------------- 首页 ---------------- */
+function viewHome(){
+  var last = H.timeline[0] ? H.timeline[0].year : "";
+  return ''+
+  '<section class="hero">'+
+    '<h1>'+L("87版《红楼梦》","Dream of the Red Chamber · 1987")+'</h1>'+
+    (lang==="zh"
+      ? '<p class="zh">1987年中央电视台摄制的36集电视连续剧《红楼梦》，由王扶林执导，周雷、刘耕路、周岭编剧，王立平作曲。剧组历时约六年筹备拍摄，走遍10省市41地区219处景点，以二十人顾问团与全国海选的方式，成就了中国电视史上难以复制的经典。</p>'
+      : '<p class="en2">The 36-episode 1987 CCTV adaptation, directed by Wang Fulin with music by Wang Liping, spent about six years in preparation and shooting across 219 locations in 41 regions of 10 provinces. This local archive collects its characters, episodes, music and behind-the-scenes stories; facts are cited and unverified items are clearly marked.</p>')+
+  '</section>'+
+  '<div class="stats">'+
+    '<div class="stat"><b>248</b><span>'+L("收录人物","Characters")+'</span></div>'+
+    '<div class="stat"><b>36</b><span>'+L("全剧分集","Episodes")+'</span></div>'+
+    '<div class="stat"><b>13</b><span>'+L("王立平曲目","Songs")+'</span></div>'+
+    '<div class="stat"><b>1987.5.2</b><span>'+L("央视首播","Premiered")+'</span></div>'+
+  '</div>'+
+  '<h2>'+L("站内板块","Sections")+'</h2>'+
+  '<div class="gates">'+
+    gate(L("人物图鉴","Characters"),L("248人 · 搜索 · 分组 · 关系","248 entries · search · filter · relations"),"#/list")+
+    gate(L("分集剧情","Episodes"),L("36集剧情概述与口径说明","36 episodes with source notes"),"#/episodes")+
+    gate(L("人物关系","Relations"),L("宁荣世系图 · 宝玉关系网","Family tree · Baoyu network"),"#/relations")+
+    gate(L("时间线","Timeline"),L("1979–2026 剧组大事记","1979–2026 milestones"),"#/timeline")+
+    gate(L("音乐","Music"),L("王立平13首 · 陈力王洁实","13 songs · Chen Li · Wang Jieshi"),"#/music")+
+    gate(L("幕后故事·轶闻","Behind, Crew & Anecdotes"),L("筹备 · 选角 · 培训班 · 拍摄 · 幕后工作者 · 戏外轶闻","Pre-production · casting · training · shooting · crew · anecdotes"),"#/behind")+
+    gate(L("纪念","Memorial"),L("已故演员名录（截至2026-10-03）","Deceased cast members (as of 2026-10-03)"),"#/memorial")+
+    gate(L("结局对照","Endings"),L("87版结局 vs 高鹗续书","87 ending vs Gao E sequel"),"#/compare")+
+    gate(L("信源·勘误","Sources & Errata"),L("S/A/B/C/D分级 · 冲突记录","Source grades · conflict log"),"#/sources")+
+    gate(L("图库","Gallery"),L("149张图 · 剧照+生活照 · 可检索","149 photos · stills & life · searchable"),"#/photos")+
+  '</div>'+
+  '<div class="card" style="margin-top:20px">'+
+    '<h3 style="margin-top:0">'+L("数据说明","About this archive")+'</h3>'+
+    (lang==="zh"
+      ? '<p class="small">本站为纯本地静态资料站，双击 index.html 即可浏览，无需联网与构建。人物数据248人，含归属、关系与演出信息；所有外部事实均标注信源并分级，凡资料暂缺或不明确之处如实标注，不编造。英文版式为目录级双语，深度内容以中文为主。</p>'
+      : '<p class="small">This is a purely local static archive — double-click index.html to browse, no network or build required. It covers 248 characters with affiliations, relations and cast info; all external facts cite sources with grades, and anything unverified is clearly marked rather than invented. Deep content (profiles, episode summaries, stories) stays in Chinese; UI and navigation are bilingual.</p>')+
+  '</div>';
+}
+function gate(t,d,url){ return '<a class="gate" href="'+url+'"><b>'+esc(t)+'</b><small>'+esc(d)+'</small></a>'; }
+
+/* ---------------- 人物图鉴 ---------------- */
+function viewList(){
+  return ''+
+  '<h1>'+L("人物图鉴","Character Directory")+'</h1>'+
+  '<p class="sub">'+L("共收录248人。搜索支持姓名、别名、演员名；分组与层级可按需筛选。点击卡片查看详情。mentioned（仅提及）为原著提及但87版未出场或资料暂缺者，页面如实标注。",
+    "248 entries. Search by name, alias or actor; filter by group and tier. Click a card for details. \"Mentioned\" characters appear in the novel but not (or not verifiably) in the 87 series — marked as-is.")+'</p>'+
+  '<div class="controls">'+
+    '<input id="lq" placeholder="'+L("搜索姓名 / 别名 / 演员名 / 关系…","Search name / alias / actor / relation…")+'" value="'+esc(listState.q)+'">'+
+    '<select id="lg">'+(function(){var s='<option value="全部">'+L("全部分组","All Groups")+'</option>';GROUPS.forEach(function(g){s+='<option'+(listState.group===g?' selected':'')+'>'+esc(g)+'</option>';});return s;})()+'</select>'+
+    '<select id="ls">'+(function(){var s='<option value="全部">'+L("全部层级","All Tiers")+'</option>';Object.keys(STATUS).forEach(function(k){s+='<option value="'+k+'"'+(listState.status===k?' selected':'')+'>'+L(STATUS[k].split("（")[0],STATUS_EN[k])+'</option>';});return s;})()+'</select>'+
+  '</div>'+
+  '<div id="lres"></div>';
+}
+function initList(){
+  var q=$("lq"), g=$("lg"), s=$("ls");
+  q.addEventListener("input", function(){ listState.q=q.value; drawList(); });
+  g.addEventListener("change", function(){ listState.group=g.value; drawList(); });
+  s.addEventListener("change", function(){ listState.status=s.value; drawList(); });
+  drawList();
+}
+function drawList(){
+  var st=listState, out=[], q=st.q.trim().toLowerCase();
+  H.characters.forEach(function(c){
+    if(st.group!=="全部" && c.group!==st.group) return;
+    if(st.status!=="全部" && c.status!==st.status) return;
+    if(q){
+      var hay=(c.name+" "+(c.aliases||"")+" "+(c.actor||"")+" "+(c.relation||"")).toLowerCase();
+      if(hay.indexOf(q)<0) return;
+    }
+    out.push(c);
+  });
+  var order={core:0,important:1,entry:2,mentioned:3};
+  out.sort(function(a,b){ return ((order[a.status]!==undefined?order[a.status]:4))-((order[b.status]!==undefined?order[b.status]:4)) || a.name.localeCompare(b.name,"zh"); });
+  var html='<p class="small muted">'+out.length+' '+L("条结果","results")+'</p><div class="people">';
+  out.forEach(function(c){
+    var ph=photoByChar(c.name);
+    var phs=photosOf(c.name);
+    var img=ph?'<img class="pt" src="assets/photos/'+ph.file+'" alt="'+esc(c.name)+L("剧照","still")+'" loading="lazy">':'';
+    var imgTag=phs&&phs.length>0?L('剧照 '+phs.length+' 张','Photos: '+phs.length):L('暂无剧照图','No photo yet');
+    html+='<a class="pcard" href="#/char/'+encodeURIComponent(c.name)+'">'+img+'<div class="ptx">'+
+      '<b>'+esc(c.name)+'</b> <span class="tag t-'+c.status+'">'+statusLabel(c.status)+'</span>'+
+      '<div class="actor">'+esc(c.actor||"—")+'</div>'+
+      '<div class="rel">'+esc(c.relation||"")+'</div>'+
+      '<div class="phflag '+(phs&&phs.length?'has':'no')+'">'+imgTag+'</div>'+
+    '</div></a>';
+  });
+  html+='</div>';
+  $("lres").innerHTML = html;
+}
+
+/* ---------------- 人物详情 ---------------- */
+function viewChar(name){
+  var c=null; H.characters.forEach(function(x){ if(x.name===name) c=x; });
+  if(!c) return '<a class="back" href="#/list">'+L("← 返回人物图鉴","← Back")+'</a><h1>'+L("未找到该人物","Character not found")+'</h1>';
+  var p=H.profiles[c.name];
+  var html='<a class="back" href="#/list">'+L("← 返回人物图鉴","← Back to characters")+'</a>'+
+  '<h1>'+esc(c.name)+' <span class="tag t-'+c.status+'">'+statusLabel(c.status)+'</span></h1>'+
+  '<div class="card" style="margin-top:14px">'+
+    '<table><tbody>'+
+      '<tr><th style="width:90px">'+L("归属","Affiliation")+'</th><td>'+esc(c.group||"—")+'</td></tr>'+
+      '<tr><th>'+L("人物关系","Relation")+'</th><td>'+esc(c.relation||"—")+'</td></tr>'+
+      '<tr><th>'+L("演员","Actor")+'</th><td>'+(c.actor&&c.actor!=="—"?esc(c.actor):'<span class="muted">'+L("资料暂缺（如实标注，不编造）","Unverified — marked as missing")+'</span>')+'</td></tr>'+
+      (p?'<tr><th>'+L("剧中主要剧情","Story in the series")+'</th><td>'+esc(p.story)+'</td></tr>'+
+          '<tr><th>'+L("87版结局","Ending (87 version)")+'</th><td>'+esc(p.end)+'</td></tr>':'')+
+      (c.aliases?'<tr><th>'+L("别名/异写","Aliases")+'</th><td>'+esc(c.aliases)+'</td></tr>':'')+
+      '<tr><th>'+L("层级说明","Tier")+'</th><td>'+esc(STATUS[c.status])+'</td></tr>'+
+      (c.note?'<tr><th>'+L("备注","Notes")+'</th><td>'+esc(c.note)+'</td></tr>':'')+
+    '</tbody></table>'+
+  '</div>';
+  var phs=photoAll(c.name);
+  if(phs.length){
+    html+='<div class="card"><h3 style="margin-top:0">'+L("剧照","Photos")+'</h3><div class="photos-mini">';
+    phs.forEach(function(p){
+      html+='<figure><a href="assets/photos/'+p.file+'" target="_blank" rel="noopener" title="'+L("点击查看原图","Open original")+'"><img src="assets/photos/'+p.file+'" alt="'+esc(p.desc)+'" loading="lazy"></a>'+
+      '<figcaption>'+esc(p.desc)+'<br><span class="muted">'+L("来源：","Source: ")+esc(p.host)+' · '+esc(p.date)+'</span></figcaption></figure>';
+    });
+    html+='</div></div>';
+  }
+  return html;
+}
+
+/* ---------------- 分集剧情 ---------------- */
+function viewEpisodes(){
+  var html='<h1>'+L("分集剧情","Episodes")+'</h1>'+
+  '<p class="sub">'+L("87版每集并无官方标题，下表标题为央视网/电视猫等通行分集名；概述依公开分集资料整理。注意：后7集（30–36）为依红学探佚重构的结局，与高鹗续书（含「调包计」等）不同，详见「结局对照」与「信源·勘误」。",
+    "The 87 series has no official per-episode titles; the titles below follow the common CCTV/TV-Mao naming. Note: Ep.30–36 are a reconstructed ending based on Hongxue research, differing from Gao E's sequel — see \"Endings\" and \"Sources\".")+'</p>'+
+  '<div class="ep-grid">';
+  H.episodes.forEach(function(e){
+    html+='<div class="ep"><b>'+L("第"+e.n+"集 · ","Ep."+e.n+" · ")+esc(e.title)+'</b><p>'+esc(e.summary)+'</p><button onclick="this.parentNode.classList.toggle(\'open\');this.textContent=this.parentNode.classList.contains(\'open\')?'+L("'收起'","'Collapse'")+':'+L("'展开概述'","'Expand'")+'">'+L("展开概述","Expand")+'</button></div>';
+  });
+  html+='</div>';
+  return html;
+}
+
+/* ---------------- 人物关系 ---------------- */
+function viewRelations(){
+  return '<h1>'+L("人物关系","Relations")+'</h1>'+
+  '<p class="sub">'+L("四幅示意图：宁荣二府世系简图、四大家族联姻关系简图、贾宝玉核心关系网与金陵十二钗关系简图（均为示意）。关系以原著为主干、87版呈现为准，为便于浏览已作简化，非完整族谱。",
+    "Four schematic diagrams: the Ning & Rong family tree, the Four Great Houses marriage network, Jia Baoyu's core relationship network and the Twelve Beauties (all simplified for browsing, based on the novel as rendered by the 87 series; not a complete genealogy).")+'</p>'+
+  '<h3>'+L("宁荣二府世系简图","Family Tree of the Ning & Rong Houses")+'</h3>'+
+  '<div class="fig-scroll">'+svgFamily()+'</div>'+
+  '<p class="fig-note">'+L("▲ 示意简图：只列主干血脉与本站有档案的配偶/子女；贾代儒、贾代修等旁支未绘入。","▲ Schematic: main bloodlines and documented spouses/children only; minor branches omitted.")+'</p>'+
+  '<h3>'+L("四大家族联姻关系简图","Marriage Network of the Four Great Houses")+'</h3>'+
+  '<div class="fig-scroll">'+svgSiDa()+'</div>'+
+  '<p class="fig-note">'+L("▲ 示意简图：史侯之女贾母嫁贾代善；王家兄妹（王子腾、凤姐之父、王夫人、薛姨妈）分别与贾、薛联姻。凤姐之父原著未具名，与王子腾不是同一人。金玉良缘在87版第34集奉旨成婚，宝玉出家后成空；未成的是木石前盟。湘云祖父按贾母之兄绘制（一说堂兄）。","▲ Schematic: Grandmother Jia, daughter of the Shi lord, married Jia Daishan. The Wang siblings link the Wangs with the Jias and Xues; Xifeng's father is unnamed and is not Wang Ziteng. In the 87 series the gold-jade marriage is decreed in episode 34 and ends when Baoyu leaves; the wood-stone bond is the one left unfulfilled. Xiangyun's grandfather is drawn as Grandmother Jia's brother (some say cousin).")+'</p>'+
+  '<h3>'+L("贾宝玉核心关系网","Jia Baoyu's Core Network")+'</h3>'+
+  '<div class="fig-scroll">'+svgBaoyu()+'</div>'+
+  '<p class="fig-note">'+L("▲ 示意简图：颜色表示关系类别（红=爱情纠葛，金=姻缘线索，蓝=至亲，绿=知己师友，灰=贴身丫鬟）。",
+    "▲ Schematic: colors mark relation type (red=romance, gold=marriage bond, blue=family, green=soulmate/mentor, grey=maid).")+'</p>'+
+  '<h3>'+L("金陵十二钗 · 贾宝玉关系简图","The Twelve Beauties · Relations with Baoyu")+'</h3>'+
+  '<div class="fig-scroll">'+svgShier()+'</div>'+
+  '<p class="fig-note">'+L("▲ 示意简图：以贾宝玉为视角的中心辐射图，展示金陵十二钗正册人物与宝玉的关系类别（颜色同前图；巧姐条为87版结局：被舅舅卖掉，由刘姥姥救出）。",
+    "▲ Schematic: radial view from Baoyu of the twelve beauties of the main register; colors as above (Qiaojie, in the 87 ending, is sold by her uncle and rescued by Granny Liu).")+'</p>'+
+  '<h3>'+L("金陵十二钗判词（正册 / 副册 / 又副册）","Verdict Poems of the Twelve Beauties (main / sub / sub-sub registers)")+'</h3>'+
+  jinlingBlock();
+}
+function svgFamily(){
+  var N={w:1800,h:580};
+  // 布局：宁府单列(x=150)直下；荣府三支(赦430/政900/敏1580)的子女全部放 416 行，
+  //       孙辈(巧姐/兰)放 536 行——所有连线均为相邻代连接，水平线走行间空隙，零穿框。
+  var nodes=[
+    {id:"y1",x:150,y:56, name:"宁国公 贾演", sub:"宁国府始祖"},
+    {id:"y2",x:150,y:176, name:"贾代化", sub:"宁府次代"},
+    {id:"y3",x:150,y:296, name:"贾敬", sub:"袭爵·好道"},
+    {id:"y4a",x:150,y:416, name:"贾珍", sub:"妻 尤氏"},
+    {id:"y5a",x:150,y:536, name:"贾蓉", sub:"妻 秦可卿"},
+    {id:"y4b",x:290,y:416, name:"贾惜春", sub:"宁府四小姐"},
+    {id:"r1",x:900,y:56, name:"荣国公 贾源", sub:"荣国府始祖"},
+    {id:"r2",x:900,y:176, name:"贾代善", sub:"妻 贾母(史太君)"},
+    {id:"r3a",x:430,y:296, name:"贾赦", sub:"妻 邢夫人"},
+    {id:"r3b",x:900,y:296, name:"贾政", sub:"妻 王夫人 · 赵姨娘"},
+    {id:"r3c",x:1580,y:296, name:"贾敏", sub:"夫 林如海"},
+    {id:"r4a",x:430,y:416, name:"贾琏", sub:"妻 王熙凤 · 通房平儿"},
+    {id:"r5a",x:430,y:536, name:"巧姐", sub:"凤姐之女"},
+    {id:"r4b",x:580,y:416, name:"贾迎春", sub:"庶出·嫁孙绍祖"},
+    {id:"r4c",x:730,y:416, name:"贾琮", sub:"贾赦次子"},
+    {id:"r4d",x:880,y:416, name:"贾珠", sub:"妻 李纨"},
+    {id:"r5b",x:880,y:536, name:"贾兰", sub:"李纨之子"},
+    {id:"r4e",x:1030,y:416, name:"贾元春", sub:"贤德妃"},
+    {id:"r4f",x:1180,y:416, name:"贾宝玉", sub:"衔玉而生"},
+    {id:"r4g",x:1330,y:416, name:"贾探春", sub:"赵姨娘所出"},
+    {id:"r4h",x:1480,y:416, name:"贾环", sub:"赵姨娘所出"},
+    {id:"r4i",x:1720,y:416, name:"林黛玉", sub:"林如海之女"}
+  ];
+  var links=[
+    ["y1","y2"],["y2","y3"],["y3","y4a"],["y4a","y5a"],["y3","y4b"],
+    ["r1","r2"],["r2","r3a"],["r2","r3b"],["r2","r3c"],
+    ["r3a","r4a"],["r4a","r5a"],["r3a","r4b"],["r3a","r4c"],
+    ["r3b","r4d"],["r4d","r5b"],["r3b","r4e"],["r3b","r4f"],["r3b","r4g"],["r3b","r4h"],
+    ["r3c","r4i"]
+  ];
+  var byId={}; nodes.forEach(function(n){ byId[n.id]=n; });
+  var s='<svg width="'+N.w+'" height="'+N.h+'" viewBox="0 0 '+N.w+' '+N.h+'" xmlns="http://www.w3.org/2000/svg" style="min-width:'+N.w+'px">';
+  s+='<text x="20" y="24" font-size="12" fill="#6b6b6b">宁荣二府世系简图（示意 · 非完整族谱）</text>';
+  links.forEach(function(L){
+    var a=byId[L[0]], b=byId[L[1]];
+    // 相邻代连接：y_mid 取两行空隙中点（框底 a.y+22 与 框顶 b.y-22 之间），水平线不穿任何节点框
+    var y_mid=(a.y+22 + b.y-22)/2;
+    var x1=a.x, x2=b.x;
+    // 父x与子x不同列时，用"三段折线"：父x竖线(到空隙) → 水平(空隙) → 子x竖线(到子框顶)
+    // 父x竖线只到 y_mid，之后水平，再在子x竖线下到子框顶——中间行框(y在 a.y+22 与 b.y-22 之间)不被竖线穿过
+    s+='<line x1="'+x1+'" y1="'+(a.y+22)+'" x2="'+x1+'" y2="'+y_mid+'" stroke="#c9bfae" stroke-width="1.2"/>';
+    s+='<line x1="'+x1+'" y1="'+y_mid+'" x2="'+x2+'" y2="'+y_mid+'" stroke="#c9bfae" stroke-width="1.2"/>';
+    s+='<line x1="'+x2+'" y1="'+y_mid+'" x2="'+x2+'" y2="'+(b.y-6)+'" stroke="#c9bfae" stroke-width="1.2"/>';
+  });
+  nodes.forEach(function(n){
+    var isNing = n.id.charAt(0)==="y";
+    var fill = isNing ? "#f0e6da" : "#f7f2ea";
+    var stroke = isNing ? "#b98a2f" : "#b03a2e";
+    s+='<rect x="'+(n.x-65)+'" y="'+(n.y-22)+'" width="130" height="44" rx="8" fill="'+fill+'" stroke="'+stroke+'" stroke-width="1.4"/>';
+    s+='<text x="'+n.x+'" y="'+(n.y-1)+'" font-size="12.5" font-weight="600" text-anchor="middle" fill="#2b2b2b">'+n.name+'</text>';
+    s+='<text x="'+n.x+'" y="'+(n.y+15)+'" font-size="9.5" text-anchor="middle" fill="#6b6b6b">'+n.sub+'</text>';
+  });
+  s+='<rect x="30" y="566" width="130" height="22" rx="4" fill="#f0e6da" stroke="#b98a2f" stroke-width="1"/> <text x="95" y="581" font-size="11" text-anchor="middle" fill="#6b6b6b">宁国府</text>';
+  s+='<rect x="170" y="566" width="130" height="22" rx="4" fill="#f7f2ea" stroke="#b03a2e" stroke-width="1"/> <text x="235" y="581" font-size="11" text-anchor="middle" fill="#6b6b6b">荣国府</text>';
+  s+='</svg>';
+  return s;
+}
+function svgBaoyu(){
+  var cx=500, cy=280, R=205;
+  var rels=[
+    {n:"林黛玉", c:"#b03a2e", t:"知己 · 木石前盟"},
+    {n:"薛宝钗", c:"#b98a2f", t:"金玉良缘"},
+    {n:"史湘云", c:"#2f6b3a", t:"青梅竹马"},
+    {n:"贾母",   c:"#3a5a8a", t:"祖母庇护"},
+    {n:"王夫人", c:"#3a5a8a", t:"母亲"},
+    {n:"贾政",   c:"#3a5a8a", t:"严父"},
+    {n:"袭人",   c:"#7a7a7a", t:"贴身大丫鬟"},
+    {n:"晴雯",   c:"#7a7a7a", t:"知己丫鬟"},
+    {n:"紫鹃",   c:"#7a7a7a", t:"黛玉丫鬟 · 情系"},
+    {n:"妙玉",   c:"#2f6b3a", t:"方外之谊"},
+    {n:"秦钟",   c:"#2f6b3a", t:"知己"},
+    {n:"北静王", c:"#2f6b3a", t:"神交"},
+    {n:"蒋玉菡", c:"#2f6b3a", t:"挚友 · 琪官"},
+    {n:"探春",   c:"#3a5a8a", t:"兄妹"},
+    {n:"麝月",   c:"#7a7a7a", t:"丫鬟"},
+    {n:"芳官",   c:"#7a7a7a", t:"戏班知己"}
+  ];
+  var s='<svg width="1050" height="580" viewBox="0 0 1050 580" xmlns="http://www.w3.org/2000/svg" style="min-width:1050px">';
+  s+='<text x="20" y="24" font-size="12" fill="#6b6b6b">贾宝玉核心关系网（示意）</text>';
+  rels.forEach(function(r,i){
+    var ang=-90 + i*(360/rels.length);
+    var rad=ang*Math.PI/180;
+    var x=cx+Math.cos(rad)*R, y=cy+Math.sin(rad)*R;
+    s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+x+'" y2="'+y+'" stroke="'+r.c+'" stroke-opacity="0.55" stroke-width="1.6"/>';
+    s+='<circle cx="'+x+'" cy="'+y+'" r="36" fill="#fff" stroke="'+r.c+'" stroke-width="1.6"/>';
+    s+='<text x="'+x+'" y="'+(y+4)+'" font-size="12.5" font-weight="600" text-anchor="middle" fill="#2b2b2b">'+r.n+'</text>';
+    s+='<text x="'+x+'" y="'+(y+17)+'" font-size="9" text-anchor="middle" fill="#6b6b6b">'+r.t+'</text>';
+  });
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="46" fill="#b03a2e" stroke="#8a2f25" stroke-width="2"/>';
+  s+='<text x="'+cx+'" y="'+cy+'" font-size="15" font-weight="700" text-anchor="middle" fill="#fff">贾宝玉</text>';
+  var legend=[["#b03a2e","爱情纠葛"],["#b98a2f","姻缘线索"],["#3a5a8a","至亲"],["#2f6b3a","知己师友"],["#7a7a7a","贴身丫鬟"]];
+  var lx=295, ly=545;
+  legend.forEach(function(L){
+    s+='<rect x="'+lx+'" y="'+(ly-10)+'" width="12" height="12" rx="2" fill="'+L[0]+'"/>';
+    s+='<text x="'+lx+18+'" y="'+(ly+2)+'" font-size="11.5" fill="#6b6b6b">'+L[1]+'</text>';
+    lx+=100;
+  });
+  s+='</svg>';
+  return s;
+}
+
+/* ---------------- 金陵十二钗关系简图（第三张） ---------------- */
+function svgShier(){
+  var cx=500, cy=280, R=205;
+  var rels=[
+    {n:"林黛玉", c:"#b03a2e", t:"知己 · 木石前盟"},
+    {n:"薛宝钗", c:"#b98a2f", t:"金玉良缘"},
+    {n:"史湘云", c:"#2f6b3a", t:"青梅竹马"},
+    {n:"贾元春", c:"#3a5a8a", t:"贤德妃 · 长姐"},
+    {n:"贾迎春", c:"#3a5a8a", t:"二姐 · 懦弱"},
+    {n:"贾探春", c:"#3a5a8a", t:"三姐 · 有才"},
+    {n:"贾惜春", c:"#3a5a8a", t:"四妹 · 孤僻"},
+    {n:"王熙凤", c:"#3a5a8a", t:"表姐 · 管家"},
+    {n:"巧姐",   c:"#3a5a8a", t:"侄女 · 被卖获救"},
+    {n:"李纨",   c:"#3a5a8a", t:"嫂子 · 贞静"},
+    {n:"妙玉",   c:"#2f6b3a", t:"方外之谊"},
+    {n:"秦可卿", c:"#7a7a7a", t:"嫂嫂 · 神秘早逝"}
+  ];
+  var s='<svg width="1050" height="580" viewBox="0 0 1050 580" xmlns="http://www.w3.org/2000/svg" style="min-width:1050px">';
+  s+='<text x="20" y="24" font-size="12" fill="#6b6b6b">金陵十二钗（正册）与贾宝玉关系简图（示意）</text>';
+  rels.forEach(function(r,i){
+    var ang=-90 + i*(360/rels.length);
+    var rad=ang*Math.PI/180;
+    var x=cx+Math.cos(rad)*R, y=cy+Math.sin(rad)*R;
+    s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+x+'" y2="'+y+'" stroke="'+r.c+'" stroke-opacity="0.5" stroke-width="1.5"/>';
+    s+='<circle cx="'+x+'" cy="'+y+'" r="36" fill="#fff" stroke="'+r.c+'" stroke-width="1.5"/>';
+    s+='<text x="'+x+'" y="'+(y+4)+'" font-size="12.5" font-weight="600" text-anchor="middle" fill="#2b2b2b">'+r.n+'</text>';
+    s+='<text x="'+x+'" y="'+(y+17)+'" font-size="9" text-anchor="middle" fill="#6b6b6b">'+r.t+'</text>';
+  });
+  s+='<circle cx="'+cx+'" cy="'+cy+'" r="46" fill="#2f6b3a" stroke="#24522c" stroke-width="2"/>';
+  s+='<text x="'+cx+'" y="'+cy+'" font-size="15" font-weight="700" text-anchor="middle" fill="#fff">贾宝玉</text>';
+  s+='<text x="'+cx+'" y="'+(cy+18)+'" font-size="9" text-anchor="middle" fill="#e8e2d6">中心视角</text>';
+  var legend=[["#b03a2e","爱情纠葛"],["#b98a2f","姻缘线索"],["#3a5a8a","至亲家眷"],["#2f6b3a","知己师友"],["#7a7a7a","特殊缘法"]];
+  var lx=295, ly=545;
+  legend.forEach(function(L){
+    s+='<rect x="'+lx+'" y="'+(ly-10)+'" width="12" height="12" rx="2" fill="'+L[0]+'"/>';
+    s+='<text x="'+lx+18+'" y="'+(ly+2)+'" font-size="11.5" fill="#6b6b6b">'+L[1]+'</text>';
+    lx+=100;
+  });
+  s+='</svg>';
+  return s;
+}
+
+/* 四大家族（贾/史/王/薛）联姻关系简图
+ * 四代分行。血亲走折线；夫妻、同胞走同辈框间短线。
+ * 凤姐之父→凤姐、薛父→宝钗跨列，改从最下一代框底绕行，避免穿过别人的框。
+ */
+function svgSiDa(){
+  var N={w:2000,h:730};
+  var BW=128, BH=46, hw=BW/2, hh=BH/2;
+  var nodes=[
+    {id:"shihou", x:220, y:58,  name:"史侯",     sub:"保龄侯尚书令·贾母之父", fam:"shi"},
+    {id:"jiayuan",x:520, y:58,  name:"荣国公贾源", sub:"荣国府始祖", fam:"jia"},
+    {id:"wangfu", x:1320,y:58,  name:"王家上一代", sub:"王公之后·未具名", fam:"wang"},
+    {id:"xuegong",x:1860,y:58,  name:"薛公",     sub:"紫薇舍人·皇商", fam:"xue"},
+    {id:"xz",     x:80,  y:200, name:"湘云祖父", sub:"贾母之兄", fam:"shi"},
+    {id:"jm",     x:360, y:200, name:"贾母",     sub:"史侯之女·史太君", fam:"shi"},
+    {id:"ds",     x:520, y:200, name:"贾代善",   sub:"荣国公长子·袭爵", fam:"jia"},
+    {id:"she",    x:260, y:370, name:"贾赦",     sub:"妻 邢夫人", fam:"jia"},
+    {id:"zheng",  x:790, y:370, name:"贾政",     sub:"贾母次子", fam:"jia"},
+    {id:"wfr",    x:960, y:370, name:"王夫人",   sub:"贾政之妻·王氏", fam:"wang"},
+    {id:"zt",     x:1320,y:370, name:"王子腾",   sub:"王夫人之兄", fam:"wang"},
+    {id:"ff",     x:1500,y:370, name:"凤姐之父", sub:"原著未具名", fam:"wang"},
+    {id:"eym",    x:1680,y:370, name:"薛姨妈",   sub:"王夫人之妹", fam:"wang"},
+    {id:"ef",     x:1860,y:370, name:"薛蟠之父", sub:"已故·娶薛姨妈", fam:"xue"},
+    {id:"xy",     x:80,  y:540, name:"史湘云",   sub:"父母早亡·叔父抚养", fam:"shi"},
+    {id:"lian",   x:260, y:540, name:"贾琏",     sub:"贾赦之子", fam:"jia"},
+    {id:"xf",     x:430, y:540, name:"王熙凤",   sub:"凤姐之父之女", fam:"wang"},
+    {id:"dy",     x:620, y:540, name:"林黛玉",   sub:"贾敏之女·林家", fam:"lin"},
+    {id:"by",     x:790, y:540, name:"贾宝玉",   sub:"贾政、王夫人之子", fam:"jia"},
+    {id:"chai",   x:1100,y:540, name:"薛宝钗",   sub:"薛姨妈之女", fam:"xue"},
+    {id:"pan",    x:1860,y:540, name:"薛蟠",     sub:"薛姨妈之子", fam:"xue"}
+  ];
+  var byId={}; nodes.forEach(function(n){ byId[n.id]=n; });
+  var s='<svg width="'+N.w+'" height="'+N.h+'" viewBox="0 0 '+N.w+' '+N.h+'" xmlns="http://www.w3.org/2000/svg" style="min-width:'+N.w+'px">';
+  s+='<text x="20" y="22" font-size="12" fill="#6b6b6b">四大家族（贾 · 史 · 王 · 薛）联姻关系简图（示意）</text>';
+  function stroke(color, dash){
+    return ' stroke="'+color+'" stroke-opacity="0.72" stroke-width="1.35"'+(dash?' stroke-dasharray="6,4"':'');
+  }
+  function vline(x1,y1,x2,y2,color,dash){
+    s+='<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'"'+stroke(color,dash)+'/>';
+  }
+  function blood(pid, cid, yMid){
+    var p=byId[pid], c=byId[cid];
+    var y1=p.y+hh, y2=c.y-hh;
+    if(Math.abs(p.x-c.x)<1){ vline(p.x,y1,c.x,y2,"#8a837a",false); return; }
+    vline(p.x,y1,p.x,yMid,"#8a837a",false);
+    vline(p.x,yMid,c.x,yMid,"#8a837a",false);
+    vline(c.x,yMid,c.x,y2,"#8a837a",false);
+  }
+  function under(pid, cid, yLane){
+    var p=byId[pid], c=byId[cid];
+    vline(p.x, p.y+hh, p.x, yLane, "#8a837a", false);
+    vline(p.x, yLane, c.x, yLane, "#8a837a", false);
+    vline(c.x, yLane, c.x, c.y+hh, "#8a837a", false);
+  }
+  function underOut(pid, cid, yLane, xOut){
+    var p=byId[pid], c=byId[cid];
+    var y0=p.y+hh+8;
+    vline(p.x, p.y+hh, p.x, y0, "#8a837a", false);
+    vline(p.x, y0, xOut, y0, "#8a837a", false);
+    vline(xOut, y0, xOut, yLane, "#8a837a", false);
+    vline(xOut, yLane, c.x, yLane, "#8a837a", false);
+    vline(c.x, yLane, c.x, c.y+hh, "#8a837a", false);
+  }
+  function side(aId,bId,color,dash){
+    var a=byId[aId], b=byId[bId];
+    var left=a.x<b.x?a:b, right=a.x<b.x?b:a;
+    vline(left.x+hw, left.y, right.x-hw, right.y, color, dash);
+  }
+  blood("shihou","xz",120);
+  blood("shihou","jm",148);
+  blood("jiayuan","ds",120);
+  blood("ds","she",270);
+  blood("ds","zheng",305);
+  blood("wangfu","zt",255);
+  blood("wangfu","wfr",250);
+  blood("wangfu","ff",330);
+  blood("wangfu","eym",300);
+  blood("xuegong","ef",200);
+  blood("xz","xy",455);
+  blood("she","lian",455);
+  blood("zheng","by",430);
+  blood("wfr","by",455);
+  blood("ef","pan",455);
+  under("ff","xf",608);
+  underOut("ef","chai",638,1960);
+  side("jm","ds","#b03a2e",false);
+  side("zheng","wfr","#b03a2e",false);
+  side("eym","ef","#b03a2e",false);
+  side("lian","xf","#b03a2e",false);
+  side("wfr","zt","#3a5a8a",true);
+  side("zt","ff","#3a5a8a",true);
+  side("ff","eym","#3a5a8a",true);
+  side("dy","by","#b98a2f",true);
+  side("by","chai","#b98a2f",false);
+  var fam={
+    shi:{fill:"#eef2f8", stroke:"#3a5a8a"},
+    jia:{fill:"#f7f2ea", stroke:"#b03a2e"},
+    wang:{fill:"#f3f7ee", stroke:"#2f6b3a"},
+    xue:{fill:"#faf3ec", stroke:"#b98a2f"},
+    lin:{fill:"#f4f4f4", stroke:"#7a7a7a"}
+  };
+  nodes.forEach(function(n){
+    var c=fam[n.fam];
+    s+='<rect x="'+(n.x-hw)+'" y="'+(n.y-hh)+'" width="'+BW+'" height="'+BH+'" rx="8" fill="'+c.fill+'" stroke="'+c.stroke+'" stroke-width="1.4"/>';
+    s+='<text x="'+n.x+'" y="'+(n.y-2)+'" font-size="12.5" font-weight="600" text-anchor="middle" fill="#2b2b2b">'+n.name+'</text>';
+    s+='<text x="'+n.x+'" y="'+(n.y+14)+'" font-size="9.5" text-anchor="middle" fill="#6b6b6b">'+n.sub+'</text>';
+  });
+  var legend=[
+    ["#b03a2e", false, "夫妻"],
+    ["#8a837a", false, "血亲"],
+    ["#3a5a8a", true,  "同胞"],
+    ["#b98a2f", false, "奉旨成婚（后成空）"],
+    ["#b98a2f", true,  "木石前盟·未成"]
+  ];
+  var lx=24, ly=700;
+  legend.forEach(function(Lg){
+    var dash=Lg[1]?' stroke-dasharray="6,4"':'';
+    s+='<line x1="'+lx+'" y1="'+(ly-4)+'" x2="'+(lx+26)+'" y2="'+(ly-4)+'" stroke="'+Lg[0]+'" stroke-width="2" stroke-opacity="0.85"'+dash+'/>';
+    s+='<text x="'+(lx+32)+'" y="'+ly+'" font-size="11.5" fill="#6b6b6b">'+Lg[2]+'</text>';
+    lx+=280;
+  });
+  s+='</svg>';
+  return s;
+}
+function viewTimeline(){
+  var html='<h1>'+L("时间线","Timeline")+'</h1><p class="sub">'+L("剧组大事记，依据公开报道与央视栏目资料整理，详见「信源·勘误」。","Milestones of the production, compiled from public reports and CCTV programs; see \"Sources & Errata\".")+'</p><div class="tl">';
+  H.timeline.forEach(function(t){
+    html+='<div class="item"><div class="year">'+esc(t.year)+'</div><div class="txt">'+esc(t.text)+'</div></div>';
+  });
+  html+='</div>';
+  return html;
+}
+
+/* ---------------- 音乐 ---------------- */
+function viewMusic(){
+  var m=H.music;
+  var html='<h1>'+L("音乐","Music")+'</h1>'+
+  '<div class="card"><h3 style="margin-top:0">'+L("作曲与演唱","Composer & Singers")+'</h3>'+
+  '<p><b>'+L("作曲：","Composer: ")+'</b>'+esc(m.composer.name)+'（'+esc(m.composer.years)+'）</p>'+
+  '<p class="small">'+esc(m.composer.note)+'</p>'+
+  '<p style="margin-top:8px"><b>'+L("演唱：","Singers: ")+'</b>'+esc(m.singer.female)+'；'+esc(m.singer.male)+'</p>'+
+  '<p class="small">'+esc(m.singer.note)+'</p></div>'+
+  '<h3>'+L("13首曲目","The 13 Songs")+'</h3><div class="music-grid">';
+  m.tracks.forEach(function(t){
+    html+='<div class="mtrack"><span class="no">NO.'+t.n+'</span><b>'+esc(t.title)+'</b><div class="small" style="margin:4px 0">'+esc(t.origin)+'</div><div class="small muted">'+esc(t.note)+'</div>';
+    if(t.lyrics && t.lyrics.length){
+      html+='<button class="lyr-btn" data-open="'+L("收起歌词","Hide lyrics")+'" data-close="'+L("查看歌词","Show lyrics")+'" onclick="var p=this.parentNode.querySelector(\'.lyrics\');p.classList.toggle(\'open\');this.textContent=p.classList.contains(\'open\')?this.getAttribute(\'data-open\'):this.getAttribute(\'data-close\')">'+L("查看歌词","Show lyrics")+'</button><div class="lyrics">';
+      t.lyrics.forEach(function(l){
+        html+='<p>'+esc(l)+'</p>';
+      });
+      html+='</div>';
+    }
+    html+='</div>';
+  });
+  html+='</div>';
+  return html;
+}
+
+/* ---------------- 幕后故事（含轶闻、幕后工作者，合并视图） ---------------- */
+function viewBehindAll(){
+  return viewCrew() + viewBehind().replace(L('<h1>幕后故事</h1>','<h1>Behind the Scenes</h1>'), L('<h2>幕后故事</h2>','<h2>Behind the Scenes</h2>')) + viewGossip().replace(L('<h1>剧组轶闻</h1>','<h1>Anecdotes</h1>'), L('<h2>剧组轶闻</h2>','<h2>Anecdotes</h2>'));
+}
+
+/* ---------------- 幕后故事 ---------------- */
+function viewBehind(){
+  var html='<h1>'+L("幕后故事","Behind the Scenes")+'</h1><p class="sub">'+L("筹备、选角、培训班与拍摄历程。事实依据见信源页；部分细节（如培训班具体时长）存在多种说法，已取主流口径。",
+    "Pre-production, casting, training class and filming. Facts follow the source page; some details (e.g. training duration) vary across accounts — the mainstream version is used.")+'</p>';
+  H.behind.forEach(function(b){
+    html+='<div class="card"><h3 style="margin-top:0">'+esc(b.title)+'</h3><p>'+esc(b.text)+'</p></div>';
+  });
+  return html;
+}
+
+/* ---------------- 幕后工作者 ---------------- */
+function viewCrew(){
+  var html='<h2>'+L("幕后工作者","Crew & Advisors")+'</h2><p class="sub">'+L("主要创作岗位与20人顾问团。配音名单以原片字幕为准。","Key creative roles and the 20-member advisory board. Voice cast follows the on-screen credits.")+'</p><div class="fig-scroll"><table>';
+  H.crew.forEach(function(c){
+    html+='<tr><th style="width:110px">'+esc(c.role)+'</th><td><b>'+esc(c.name)+'</b><div class="small muted">'+esc(c.note)+'</div></td></tr>';
+  });
+  html+='</table></div>';
+  return html;
+}
+
+/* ---------------- 剧组轶闻 ---------------- */
+function viewGossip(){
+  var html='<h1>'+L("剧组轶闻","Anecdotes")+'</h1><p class="sub">'+L("每条均标注证实状态；「部分待核」条目仅供参考，待进一步核实。","Each item is marked with its verification status; \"partially unverified\" items are for reference only.")+'</p>';
+  H.gossip.forEach(function(g){
+    var st=g.status.indexOf("已证")===0?'<span class="st st-ok">'+L("已证","Verified")+'</span>':'<span class="st st-part">'+L("部分待核","Partial")+'</span>';
+    html+='<div class="card"><h3 style="margin-top:0">'+esc(g.title)+st+'</h3><p>'+esc(g.text)+'</p></div>';
+  });
+  return html;
+}
+
+/* ---------------- 纪念 ---------------- */
+function viewMemorial(){
+  var html='<h1>'+L("纪念 · 已故演员","In Memoriam")+'</h1>'+
+  '<div class="card" style="background:#fbf4ee;border-color:#e8d8c8"><p class="small">'+esc(H.memorial.note)+'</p></div>'+
+  '<div class="fig-scroll"><table><tr><th>'+L("姓名","Name")+'</th><th>'+L("饰演角色","Role")+'</th><th>'+L("逝世时间","Passed away")+'</th><th>'+L("原因","Cause")+'</th><th>'+L("享年","Age")+'</th><th>'+L("来源","Source")+'</th></tr>';
+  H.memorial.items.forEach(function(m){
+    html+='<tr><td><b>'+esc(m.name)+'</b></td><td>'+esc(m.role)+'</td><td>'+esc(m.date)+'</td><td>'+esc(m.cause)+'</td><td>'+esc(m.age)+'</td><td class="small">'+esc(m.src)+'</td></tr>';
+  });
+  html+='</table></div>';
+  return html;
+}
+
+/* ---------------- 结局对照 ---------------- */
+function viewCompare(){
+  var c=H.compare;
+  var html='<h1>'+L("结局对照","Endings Compared")+'</h1>'+
+  '<p class="sub">'+esc(c.note)+'</p><div class="fig-scroll"><table><tr><th style="width:140px;white-space:nowrap">'+L("人物","Character")+'</th><th>'+L("87版结局","87 Ending")+'</th><th>'+L("高鹗续书结局","Gao E Sequel")+'</th><th>'+L("差异说明","Difference")+'</th></tr>';
+  c.rows.forEach(function(r){
+    html+='<tr><td style="white-space:nowrap"><b>'+esc(r.char)+'</b></td><td>'+esc(r.v87)+'</td><td>'+esc(r.gao)+'</td><td class="small">'+esc(r.note)+'</td></tr>';
+  });
+  html+='</table></div>';
+  return html;
+}
+
+/* ---------------- 信源·勘误 ---------------- */
+function viewSources(){
+  var s=H.sources;
+  var html='<h1>'+L("信源·勘误","Sources & Errata")+'</h1>'+
+  '<h3>'+L("信源分级","Source Grades")+'</h3><div class="fig-scroll"><table><tr><th style="width:70px">'+L("级别","Grade")+'</th><th>'+L("说明","Description")+'</th></tr>';
+  s.grade.forEach(function(g){ html+='<tr><td><b>'+esc(g.g)+'</b></td><td class="small">'+esc(g.d)+'</td></tr>'; });
+  html+='</table></div>'+
+  '<h3>'+L("已核验事实（关键条目）","Verified Facts (key items)")+'</h3><div class="fig-scroll"><table><tr><th style="width:130px">'+L("事实","Fact")+'</th><th>'+L("内容","Detail")+'</th><th>'+L("信源","Source")+'</th></tr>';
+  s.verified.forEach(function(v){
+    html+='<tr><td><b>'+esc(v.fact)+'</b></td><td class="small">'+esc(v.detail)+'</td><td class="small"><a href="'+esc(v.src)+'" target="_blank" rel="noopener">'+esc(v.src.replace(/^https?:\/\//,""))+'</a></td></tr>';
+  });
+  html+='</table></div>'+
+  '<h3>'+L("信息冲突与勘误记录","Conflicts & Errata")+'</h3><div class="fig-scroll"><table><tr><th>'+L("问题","Issue")+'</th><th>'+L("详情","Detail")+'</th><th style="width:110px">'+L("定案口径","Ruling")+'</th></tr>';
+  s.conflicts.forEach(function(c){
+    html+='<tr><td><b>'+esc(c.issue)+'</b></td><td class="small">'+esc(c.detail)+'</td><td>'+esc(c.verdict)+'</td></tr>';
+  });
+  html+='</table></div>'+
+  '<h3>'+L("更新日志","Changelog")+'</h3><div class="fig-scroll"><table>';
+  s.changelog.forEach(function(c){ html+='<tr><td style="width:70px"><b>'+esc(c.v)+'</b></td><td class="small">'+esc(c.d)+'</td></tr>'; });
+  html+='</table></div>';
+  return html;
+}
+
+/* ---------------- 金陵十二钗判词（嵌入人物关系页） ---------------- */
+function jinlingBlock(){
+  var j=H.jinling, html='';
+  html+='<div class="card"><p class="small">'+esc(j.intro)+'</p></div>';
+  j.groups.forEach(function(g){
+    html+='<h4 style="margin:18px 0 8px">'+esc(g.title)+'</h4><div class="jinling-grid">';
+    g.items.forEach(function(it){
+      var actor="";
+      H.characters.forEach(function(c){ if(c.name===it.name && c.actor) actor=c.actor; });
+      var nameHtml=esc(it.name)+(it.ce?'<span class="muted">'+L(" 合判："," jointly with ")+esc(it.ce)+'</span>':'')+(it.aliases?'<span class="muted">（'+esc(it.aliases)+'）</span>':'');
+      html+='<div class="card jcard"><h3 style="margin-top:0">'+nameHtml+'</h3>'+
+        (it.poem?'<blockquote class="poem">'+esc(it.poem)+'</blockquote>':'<p class="small"><b>'+L("原著第五回未为此人题判词。","Chapter 5 of the novel gives this person no verdict poem.")+'</b></p>')+
+        (it.song?'<p class="small muted song">'+esc(it.song)+'</p>':'')+
+        '<p class="small">'+esc(it.note)+'</p>'+
+        (actor?'<p class="small"><b>'+L("87版演员：","Actor: ")+'</b>'+esc(actor)+'</p>':'')+
+      '</div>';
+    });
+    html+='</div>';
+  });
+  return html;
+}
+
+/* ---------------- 图库 ---------------- */
+function kindLabel(k){ var en={全部:"All",剧照:"Still",生活照:"Life"}; return L(k, en[k]||k); }
+function viewPhotos(){
+  var kinds=["全部","剧照","生活照"];
+  var sel=kinds.map(function(k){ return '<option value="'+k+'"'+(photoState.kind===k?' selected':'')+'>'+kindLabel(k)+'</option>'; }).join("");
+  return '<h1>'+L("图库","Gallery")+'</h1>'+
+  '<div class="card" style="background:#fbf4ee;border-color:#e8d8c8"><p class="small">'+esc(H.photos.note)+'</p>'+
+  '<p class="small" style="margin-top:6px"><b>'+L("生活照","Life photos")+'</b>：'+L("已收录演员戏外素颜照与剧组生活合影（源自欧阳奋强微信公众号公开旧照，经哔哩哔哩专栏与羊城晚报/金羊网转载整理，图片版权归原权利人）。本页支持按角色 / 演员 / 描述实时检索，并可按剧照 / 生活照分类。",
+    "Actors' off-set photos and crew life snapshots (public old photos from Ouyang Fenqiang's WeChat account, re-published by Bilibili columns and Yangcheng Evening News/Jinyang; copyright belongs to the original owners). Search by character/actor/description, filter by Still/Life.")+'</p></div>'+
+  '<div class="ph-filter">'+
+    '<input id="pq" placeholder="'+L("搜索角色名 / 演员名 / 描述…","Search character / actor / description…")+'" value="'+esc(photoState.q)+'">'+
+    '<select id="pk">'+sel+'</select>'+
+  '</div>'+
+  '<div id="pres"></div>';
+}
+function initPhotos(){
+  var q=$("pq"), k=$("pk");
+  q.addEventListener("input", function(){ photoState.q=q.value; drawPhotos(); });
+  k.addEventListener("change", function(){ photoState.kind=k.value; drawPhotos(); });
+  drawPhotos();
+}
+function drawPhotos(){
+  var st=photoState, q=st.q.trim().toLowerCase(), out=[];
+  H.photos.items.forEach(function(p){
+    if(st.kind!=="全部" && p.kind!==st.kind) return;
+    if(q && (p.char+" "+(p.actor||"")+" "+p.desc).toLowerCase().indexOf(q)<0) return;
+    out.push(p);
+  });
+  // 排序与人物图鉴一致：status 层级(core→important→entry→mentioned) + 中文名排序；
+  // 「剧组」等多人合影无 characters 对应，一律排在最后。
+  var order={core:0,important:1,entry:2,mentioned:3};
+  var stOf={}; H.characters.forEach(function(c){ stOf[c.name]=c.status; });
+  out.sort(function(a,b){
+    var sa=(stOf[a.char]!==undefined?order[stOf[a.char]]:4), sb=(stOf[b.char]!==undefined?order[stOf[b.char]]:4);
+    return sa-sb || a.char.localeCompare(b.char,"zh") || a.kind.localeCompare(b.kind) || a.id.localeCompare(b.id);
+  });
+  var html='<p class="small muted">'+out.length+' '+L("张","photos")+'</p><div class="photos">';
+  if(!out.length) html+='<div class="card"><p class="muted">'+L("暂无匹配图片（「生活照」分类当前为空，待后续采集补充）。","No matching photos (the \"Life\" category is being expanded).")+'</p></div>';
+  out.forEach(function(p){
+    html+='<div class="photo"><a href="assets/photos/'+p.file+'" target="_blank" rel="noopener" title="'+L("点击查看原图","Open original")+'"><img src="assets/photos/'+p.file+'" alt="'+esc(p.desc)+'" loading="lazy"></a>'+
+    '<div class="cap"><b>'+esc(p.char)+'</b> · <span class="muted">'+esc(p.actor)+'</span> <span class="tag t-entry">'+kindLabel(p.kind)+'</span>'+
+    '<div class="small">'+esc(p.desc)+'</div>'+
+    '<div class="src">'+L("来源：","Source: ")+esc(p.host)+'<br><a href="'+esc(p.srcUrl)+'" target="_blank" rel="noopener">'+esc(p.srcUrl)+'</a><br>'+L("采集：","Collected: ")+esc(p.date)+'</div></div></div>';
+  });
+  html+='</div>';
+  $("pres").innerHTML=html;
+}
+
+render();
+</script>
+</body>
+</html>
