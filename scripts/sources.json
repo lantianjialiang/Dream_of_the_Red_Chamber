@@ -1,0 +1,503 @@
+{
+  "_note": "87版《红楼梦》图库补采图源清单。type: weixin=微信公众号图文 / page=公开图文页。title 仅作兜底，实际以页面解析出的标题为准。所有图片逐张保留 srcUrl（原文页面）与 host（出处站点/公众号）。",
+  "collected": "2026-11-12",
+  "sources": [
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzI5MzM2MzYyMw==&mid=2247488758&idx=1&sn=9b7fdb1dd751e48b67fd4d96ac9f3b94&chksm=edfeac000a052d3066f88a00063abaeee26c13644f5a7b28e59bffb406220344893484dd1284",
+      "title": "最全87版《红楼梦》高清人物剧照，太珍贵了！",
+      "type": "weixin",
+      "account": "欧阳宝玉（欧阳奋强）",
+      "note": "逐人标注角色+演员的定妆/剧照图集，本轮最核心图源"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzIwMzM2MTYzNA==&mid=2247484503&idx=1&sn=3710f47d8f49131c790c63b94e2251e5&chksm=97561ab94e2ffffe66ebca1b1df7f57c3cd7fdce5dd522d2ee3f2587c3a35f800587fbebf906",
+      "title": "87版红楼梦演员定妆照（组图）",
+      "type": "weixin",
+      "account": "高原羚羊",
+      "note": "定妆照组图，逐张标角色与演员"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzIwOTI3MDM4OQ==&mid=2658051330&idx=2&sn=3757f54438483343728ce9c9157eb63b&chksm=8d3237302391df07553d9f3177d2f9ca6e8901d0e09e13e55cfb44a37ee941862dcbb5e87a7c",
+      "title": "私家珍藏87版《红楼梦》演员老照片，看看她们最初模样",
+      "type": "weixin",
+      "account": "DJ雅清",
+      "note": "演员培训班与剧组生活照"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzIwOTI3MDM4OQ==&mid=2658078109&idx=2&sn=800d5cbb0295defe98f5acbbd641755b&chksm=8cedce87bb9a479117dc1f3d094d8fd99767eddb3d69b6658b26b0bf1b47a0cdc5f5ae985bed",
+      "title": "私家珍藏87版《红楼梦》演员老照片，看她们最初模样却令人感慨万千",
+      "type": "weixin",
+      "account": "DJ雅清",
+      "note": "同系列重发，靠内容哈希去重"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzU3NjcwNzM1Ng==&mid=2247483807&idx=1&sn=4492f02f38adb04c30fca4e4fc3179eb&chksm=fc6419e77983f561b7d7ca1b54b16e115085947ad109a06f220e45cdb9516f08a137157c5625",
+      "title": "87版《红楼梦》珍贵合影：邓婕好时髦，林妹妹陈晓旭消瘦惹人怜爱",
+      "type": "weixin",
+      "account": "九门内外",
+      "note": "主演合影与幕后旧照，逐图有文字说明"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MjM5OTAzODIyMQ==&mid=2649365721&idx=5&sn=6742996088b1dfd6727e0ce9cf3d5ad6&chksm=bf68dd73af78c4874492632e6d6ff01db3ba0f720ca376c765588ae0159c69dabe67b050ad92",
+      "title": "87版《红楼梦》的经典老照片，怀念那个年代的经典电视剧",
+      "type": "weixin",
+      "account": "中国古诗文",
+      "note": "来源标注：红楼梦书迷；含试妆、花絮、剧组家庭照"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzI2MzQyMTM0NA==&mid=2247484468&idx=1&sn=b9968e9f721d1b233408d53dfc891a43&chksm=eb0a61a69ea4d592b9aac0d55784675a366841d03bd939a8c9a14afed4204e3d4de7bd7e8e5c",
+      "title": "87版《红楼梦》30年再聚首，你还认识他们吗？",
+      "type": "weixin",
+      "account": "湖南有线永兴网络",
+      "note": "2017 年 30 周年聚首现场照，图片来源：法制晚报"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzU2MDI0OTMyMw==&mid=2247490491&idx=1&sn=3ceec260eb8eac24d58714764cada6da&chksm=fd8784c4745ae012b65107818ce07ad2b5b73d79e49e93b0b1b1d3d0163937041b2bcd8388fb",
+      "title": "红楼梦西席与东北姑娘，87版的这次换角是对还是错",
+      "type": "weixin",
+      "account": "我来我看见",
+      "note": "第一期演员培训班罕见合影"
+    },
+    {
+      "url": "http://www.shuhua99.com/space-4611-do-blog-id-64003.html",
+      "title": "八七版《红楼梦》珍贵剧组照片，张张照片都是故事",
+      "type": "page",
+      "account": "书画家园 · 岁月珍宝馆",
+      "note": "近 30 张剧组照，逐图有说明"
+    },
+    {
+      "url": "https://www.163.com/dy/article/EC641TQN0537865G.html",
+      "title": "致敬永远的经典，87版《红楼梦》的经典老照片",
+      "type": "page",
+      "account": "网易号",
+      "note": "经典老照片图集"
+    },
+    {
+      "url": "https://m.163.com/dy/article/DA70PAHV0521DQ9P.html",
+      "title": "87版红楼演员三十年后首次合影",
+      "type": "page",
+      "account": "网易号",
+      "note": "30 年后重聚合影，逐图说明人物"
+    },
+    {
+      "url": "https://www.163.com/dy/article/F92KDON50514R9OM.html",
+      "title": "太青涩了！36年前『宝黛钗』绝版照曝光",
+      "type": "page",
+      "account": "网易号 / 羊城晚报",
+      "note": "图源：欧阳奋强微信公众号，1984 年学习班照片"
+    },
+    {
+      "url": "https://ent.ycwb.com/2020-03/31/content_732839.htm",
+      "title": "太青涩了！36年前『宝黛钗』绝版照曝光",
+      "type": "page",
+      "account": "金羊网 · 羊城晚报",
+      "note": "图/欧阳奋强微信公众号"
+    },
+    {
+      "url": "https://k.sina.cn/article_5787187353_158f1789902000z8bk.html",
+      "title": "36年前『宝黛钗』绝版照曝光！欧阳奋强感叹『岁月是小偷』",
+      "type": "page",
+      "account": "新浪新闻",
+      "note": "学习班绝版照转载"
+    },
+    {
+      "url": "https://k.sina.com.cn/article_1340604587_4fe800ab00100y9u1.html?subch=tv",
+      "title": "87《红楼梦》8张罕见的黑白照片，你都认识其中的人吗？",
+      "type": "page",
+      "account": "新浪新闻",
+      "note": "8 张黑白剧组照，逐图辨认说明"
+    },
+    {
+      "url": "https://m.thepaper.cn/newsDetail_forward_11410130",
+      "title": "87版《红楼梦》演员老照片，看看她们最初模样",
+      "type": "page",
+      "account": "澎湃新闻 · 湃客",
+      "note": "私家珍藏老照片图集"
+    },
+    {
+      "url": "https://www.wenxuecity.com/news/2021/02/21/10338067.html",
+      "title": "87版《红楼梦》演员老照片，看看她们最初模样",
+      "type": "page",
+      "account": "文学城",
+      "note": "演员培训班与剧组照转载"
+    },
+    {
+      "url": "https://yule.sohu.com/a/913447967_122393204",
+      "title": "50岁的邢岫烟和38岁的林黛玉，让她们跨越时空，再次『同框』",
+      "type": "page",
+      "account": "搜狐娱乐 · 我来我看见",
+      "note": "陈晓旭、李伊、张海燕等今昔照"
+    },
+    {
+      "url": "https://kknews.cc/zh-cn/entertainment/9vpxjpj.amp",
+      "title": "最全87版《红楼梦》高清人物剧照，太珍贵了",
+      "type": "page",
+      "account": "每日头条",
+      "note": "公众号『欧阳宝玉』图集转载版，逐人标注"
+    },
+    {
+      "url": "https://kknews.cc/zh-cn/culture/2l649m9.html",
+      "title": "87版《红楼梦》金陵十二钗最美剧照、生活照",
+      "type": "page",
+      "account": "每日头条",
+      "note": "十二钗剧照与生活照"
+    },
+    {
+      "url": "https://www.meipian.cn/3e9g2l4y",
+      "title": "【岁月时光】最全87版《红楼梦》高清人物剧照，太珍贵了！",
+      "type": "page",
+      "account": "美篇",
+      "note": "公众号图集转载，逐人标注"
+    },
+    {
+      "url": "https://www.westca.com/News/article/sid=961343/full=1/lang=tchinese.html",
+      "title": "87紅樓夢劇組赴港舊照 寶黛衣品美",
+      "type": "page",
+      "account": "加西网",
+      "note": "1987 年赴港宣传旧照"
+    },
+    {
+      "url": "https://wap.xinmin.cn/content/31105448.html",
+      "title": "红楼30年再聚首 那些惊艳时光的演员们你还认得出吗？",
+      "type": "page",
+      "account": "新民晚报",
+      "note": "2017 聚首现场照，图片来源：法制晚报"
+    },
+    {
+      "url": "https://news.qq.com/rain/a/20251219A02W4T00",
+      "title": "87版《红楼梦》女演员的选角，就像是从书中走出来的人物",
+      "type": "page",
+      "account": "腾讯新闻",
+      "note": "逐位配角剧照"
+    },
+    {
+      "url": "https://view.inews.qq.com/a/20250627A06GSM00",
+      "title": "87版红楼梦演员试妆照与定妆照对比",
+      "type": "page",
+      "account": "腾讯新闻",
+      "note": "试妆照 / 定妆照对比图"
+    },
+    {
+      "url": "https://news.qq.com/rain/a/20210926A047YH00",
+      "title": "以前剧里的丫鬟水准有多高？真是不怕抢了女主的戏",
+      "type": "page",
+      "account": "腾讯新闻",
+      "note": "五大丫鬟剧照"
+    },
+    {
+      "url": "https://baike.baidu.com/tashuo/browse/content?id=f008437b23eae7b1932d266a",
+      "title": "《87红楼梦》金陵十二钗，怀旧扑克牌剧照",
+      "type": "page",
+      "account": "百度百科 · TA说",
+      "note": "怀旧扑克牌十二钗剧照"
+    },
+    {
+      "url": "https://blog.sina.com.cn/s/blog_69019c4e0102vpwj.html",
+      "title": "87版《红楼梦》绝密定妆照曝光",
+      "type": "page",
+      "account": "新浪博客",
+      "note": "定妆照，原图多托管于人民网图床"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzUyMjE3MzQ5OA==&mid=2247490320&idx=4&sn=1afd76df5e630283550d5be57b5b5641&chksm=f8377a52f6c40d8d2d5cc66ef3d00ac33079e39bde9b2792c08f0e6980f7a4c40e0604dc8b02#rd",
+      "title": "难得一见！87版《红楼梦》拍摄花絮集锦",
+      "type": "weixin",
+      "account": "凤鸣塔下",
+      "note": "生活照、凤姐定妆照、片场花絮、全家福、军大衣合影等二十余张"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzI5MzM2MzYyMw==&mid=2247485044&idx=2&sn=39ff73cd9d7a01fb61767c49ef018c7f&chksm=ed009b3c22f360d4b1ec08a11278664f45c17d75463222d1b2ed23b8cb291a9e1340d8d958e1#rd",
+      "title": "你从未见过的87《红楼梦》花絮照",
+      "type": "weixin",
+      "account": "红楼梦研究",
+      "note": "试服装、人工降雪、部队协助大合影、访港合影等罕见工作照"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzIxOTYxNDk3MQ==&mid=2247489164&idx=4&sn=6eb509adab9b69da9756c3704c1274d2&chksm=9612d3eff24ffdaaa95d5963f479555903af6e5cb92b77dba958e6a688efd542c8ca8db59c26#rd",
+      "title": "难得一见！87版《红楼梦》拍摄花絮集锦，第一张就令人怀恋！",
+      "type": "weixin",
+      "account": "经典老剧",
+      "note": "花絮集锦另一公众号转载版，互为去重备份"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzIyOTA0ODgwNw==&mid=2650747743&idx=4&sn=da8e5331756ab4cc66147e1dad1c4acf&chksm=f1668cd031fc26a35e5a4aaa2026dee69b13dddfce4c75d0273d2f942933253f52876654b5c1#rd",
+      "title": "难得一见！87版《红楼梦》拍摄花絮集锦，第一张就令人心疼！",
+      "type": "weixin",
+      "account": "影视怀旧",
+      "note": "花絮集锦第三个公众号版本，图片序列完整"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzIzNDU1NzIwNw==&mid=2247495363&idx=2&sn=220470afde9621da68e8261e56ef095a&chksm=e8f634bbdf81bdad29feddb803978111942e445c473a219a52e0d6e3fff10b47304a2e205b8d#rd",
+      "title": "87版红楼梦拍摄花絮老照片",
+      "type": "weixin",
+      "account": "红楼旧影",
+      "note": "宝黛对戏、贾母与刘姥姥、反串宝玉、化妆师上妆、导演讲戏等"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzkzMjk3OTQ5MA==&mid=2247484701&idx=1&sn=e8561d51111c7993bc47fd10a088193b&chksm=c34dbba435bf4a4496c11fe337d7bcea66f7aff921d222c4ac847f4f321a5adc989eb889749#rd",
+      "title": "极少公开！87版《红楼梦》绝版剧照",
+      "type": "weixin",
+      "account": "老画册",
+      "note": "翻拍李耀宗《1987，我们的红楼梦》纪念画册内页，多为首次面世"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzIwNDk4MzMxNw==&mid=2247518186&idx=2&sn=476840fcd0963ba1e2f945146aaac586&chksm=9681f40cc80086446d9a1528f46ba0e04df5a35040fa8c24cc6a00e95ffe2b4c6d34727b5f4e#rd",
+      "title": "1987版电视连续剧《红楼梦》剧照欣赏",
+      "type": "weixin",
+      "account": "红楼剧照",
+      "note": "按角色逐一配单人剧照，覆盖40余位人物，近乎完整的人物剧照索引"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzA4MzI4Mjc1Mg==&mid=2655925565&idx=1&sn=85e2308c9f177bb01658bdda3b927719&chksm=85d4cdf159e3e35011ac85f0455cf435c88e41be0eb332a27c4cd187745338d64238e372c737#rd",
+      "title": "87版红楼梦难得一见的剧照现场【珍藏版】",
+      "type": "weixin",
+      "account": "红楼梦观影报告",
+      "note": "看监视器、探春远嫁讲戏、老式摄影机、人工造雪、共读西厢实景等纯现场照"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MjM5MDEyOTE0MA==&mid=2650664509&idx=2&sn=1866d12d0214db236bb3f16f182d67a4&chksm=bfbb55e6684761ce1cfaea3a1859d60bff2c4b749fe08d2b903c6832643fa52d2068fc6a4da1#rd",
+      "title": "87版电视剧《红楼梦》剧照：那些经典背后的秘密！",
+      "type": "weixin",
+      "account": "瑞悦读",
+      "note": "长篇幕后史料配剧照，含服装、化妆、选角学习班照片"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzI2MzYxMzAyMQ==&mid=2247579482&idx=1&sn=53680d66eda5e0dbf27b07fb253ff1c2&chksm=eb3e34c8dab5873fe6e6e9637451c7b46f00dcef6adc8d43bda8d5053c286e98fef87b53ae47#rd",
+      "title": "87版《红楼梦》，演员现状和剧中人物惊人相似…",
+      "type": "weixin",
+      "account": "旧时光",
+      "note": "剧组主创合照、香港合照、拍摄现场、30年聚会合影，图量大"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzkyNDY0MTI5MA==&mid=2247484276&idx=1&sn=fa31856571473fcd4974fb4f12819e44&chksm=c0fa7580eb96c6f8190ef93764edbbad2b0370e316c600a5ef97dcc456cdd11e33b0a51ae689#rd",
+      "title": "陈晓旭和欧阳奋强的22张合影",
+      "type": "weixin",
+      "account": "宝黛旧影",
+      "note": "22张宝黛剧组生活/打闹/读剧本/舞台合影"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MjM5NTQ3NzUxMQ==&mid=2247483693&idx=6&sn=a4132bb8c1e518388d0a9664247376e3&chksm=a7371eed41f937e90965fc9319aea0fe0a846a67f0865617f0743af7d18623f5bd3135d18ae4#rd",
+      "title": "欧阳奋强和陈晓旭的珍贵合影",
+      "type": "weixin",
+      "account": "影视记忆",
+      "note": "多张宝黛时装照：西装、紫裙、麻花辫、交谊舞、节目合影"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzIwMTY3NDEzMA==&mid=2651889235&idx=1&sn=71719d1ee935c783b390026151a824a4&chksm=8cb1ebe1efdf5ec6202ba4a2867071df47f6e3b94402b40021f584d59c09b052d920ff73c142#rd",
+      "title": "87红楼梦拍摄幕后：陈晓旭跟东方闻樱学武术",
+      "type": "weixin",
+      "account": "红楼幕后",
+      "note": "1984《大众电视》、圆明园培训、演员艺术照、试妆照、形体课、赴港等"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzU4OTI0MTA1Ng==&mid=2247490172&idx=2&sn=da93a2dce75665dc30eeaa64e475c967&chksm=fdd1d5f3caa65ce5a1c48a8181dc90461d3030039cc71444171007075e90aed24610b870783c#rd",
+      "title": "87《红楼梦》陈晓旭主动找欧阳奋强搭戏",
+      "type": "weixin",
+      "account": "红楼轶事",
+      "note": "宝黛选角回忆长文，配多张宝黛剧照与剧组合影"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzU4OTI0MTA1Ng==&mid=2247495122&idx=1&sn=38d3fa48917bf75f94054d3d5d9e72b2&chksm=fc6c835045f0debdc7aae9146e52b01aa744d67c0d82f68ba923d43565cfcf3b6dbe3469bf9c#rd",
+      "title": "87《红楼梦》这四个女孩，和陈晓旭犹如孪生姐妹",
+      "type": "weixin",
+      "account": "红楼轶事",
+      "note": "程荣、胡泽红、李伊、邓婕与陈晓旭对比合影，罕见配角单人照"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MjM5ODA4OTIyMA==&mid=2651621194&idx=2&sn=22b34716c713d312a14d335cc2f4b4a7&chksm=bc5d9d481d8e7e519130655a920f8af5111e0b6381c040887f939139dc4fd5b8020e67637ac7#rd",
+      "title": "87版红楼梦导演「犯了个大错误」",
+      "type": "weixin",
+      "account": "中国新闻网",
+      "note": "王扶林国图讲座报道，穿插多张官方剧照，权威媒体号"
+    },
+    {
+      "url": "http://mp.weixin.qq.com/s?__biz=MzUzNjYwNjI1NA==&mid=2247510733&idx=1&sn=c19d4d181f25d28d18296e5092665020&chksm=fbd350c8a67ad28a5beeed0b00d1e95affeacde1f2848914f9a354e0eda9312b1714c82de1e8#rd",
+      "title": "87版《红楼梦》2700套华服出自这里！",
+      "type": "weixin",
+      "account": "非遗档案",
+      "note": "苏州剧装戏具厂口述档案，含多张标注清楚的87版剧照"
+    },
+    {
+      "url": "https://kknews.cc/zh-cn/entertainment/e3kvglz.html",
+      "title": "87版红楼梦里原来还有这些试妆照定妆照",
+      "type": "page",
+      "account": "每日头条",
+      "note": "试妆/定妆照专题，陈晓旭新娘妆、欧阳奋强、乐韵王熙凤等"
+    },
+    {
+      "url": "https://m.toutiao.com/article/7405402185573450276/?use_new_style=1&group_id=7405402185573450276",
+      "title": "87版《红楼梦》最初演员名单及定妆照曝光",
+      "type": "page",
+      "account": "今日头条",
+      "note": "定妆照+选角史料：黛玉孔雀翎、侯长荣、张莉、邓婕等"
+    },
+    {
+      "url": "https://m.163.com/news/article/J9NDEPPJ0537Q1KJ.html",
+      "title": "87版《红楼梦》珍贵剧照",
+      "type": "page",
+      "account": "网易新闻",
+      "note": "逐角色配图，网易 CDN 图片易采集"
+    },
+    {
+      "url": "https://www.163.com/dy/article/DM02JAVS0517EIIF.html",
+      "title": "87版《红楼梦》11张林黛玉珍贵剧照",
+      "type": "page",
+      "account": "网易号",
+      "note": "陈晓旭林黛玉专题11张：葬花、冬日游园、洞房新娘装等"
+    },
+    {
+      "url": "https://k.sina.cn/article_6911150745_19befca9900100galc.html",
+      "title": "87版《红楼梦》的经典老照片",
+      "type": "page",
+      "account": "新浪",
+      "note": "经典老照片新浪版，CDN 与网易/搜狐不同，可补图"
+    },
+    {
+      "url": "https://www.sohu.com/a/391924573_558476",
+      "title": "87版《红楼梦》的经典老照片",
+      "type": "page",
+      "account": "搜狐号",
+      "note": "经典老照片搜狐版，图序完整"
+    },
+    {
+      "url": "https://3w.huanqiu.com/a/c93cce/9CaKrnKkiHI?agt=35&device=amp&p=3",
+      "title": "87版《红楼梦》珍贵片场照",
+      "type": "page",
+      "account": "环球网",
+      "note": "贾母杀青合影、宝玉落难造型、张莉学古筝、众美人合影等"
+    },
+    {
+      "url": "https://3w.huanqiu.com/a/c93cce/7HaHs9lSFGM?agt=2",
+      "title": "87版《红楼梦》珍贵合影",
+      "type": "page",
+      "account": "环球网",
+      "note": "主演合影、卸妆后宝黛、妙玉与黛玉片场、四大主演合影等"
+    },
+    {
+      "url": "https://news.qq.com/rain/a/20210516A0659R00",
+      "title": "87版红楼梦主创人员幕后合照",
+      "type": "page",
+      "account": "腾讯新闻",
+      "note": "胡泽红与王扶林、东方闻樱与化妆师、陈力欧阳奋强等，辨认标注详细"
+    },
+    {
+      "url": "https://new.qq.com/rain/a/20230701A012U000",
+      "title": "87版《红楼梦》旧照曝光：时隔35年，才知道经典背后的秘密",
+      "type": "page",
+      "account": "腾讯新闻",
+      "note": "黛玉手部特写、宝钗手替、十里街布景、秦可卿出殡等考据图"
+    },
+    {
+      "url": "https://c.m.163.com/news/a/EIREOGPJ05375Y97.html",
+      "title": "87版红楼梦珍贵的幕后剧照",
+      "type": "page",
+      "account": "网易新闻",
+      "note": "片场陈晓旭、王扶林说戏、混搭版宝玉、赴港、定妆照等"
+    },
+    {
+      "url": "https://k.sina.cn/article_6414076805_17e4f0b8500100ow2q.html",
+      "title": "87版《红楼梦》不为人知的幕后照",
+      "type": "page",
+      "account": "新浪看点",
+      "note": "黛玉凉拖鞋、军大衣领导观摩合影、宝黛对戏等幕后抓拍"
+    },
+    {
+      "url": "https://k.sina.cn/article_5691221049_153392439001005q5j.html",
+      "title": "87版红楼梦演员罕见戏装照",
+      "type": "page",
+      "account": "新浪看点",
+      "note": "演员入组前戏曲戏装照：邓婕川剧、袁玫黄梅戏、沈琳扬剧等"
+    },
+    {
+      "url": "https://k.sina.com.cn/article_6502132186_1838ea9da00100d3ul.html",
+      "title": "87《红楼梦》演员最初定妆照和剧中角色对比",
+      "type": "page",
+      "account": "新浪新闻",
+      "note": "张静林黛玉→晴雯、袁枚宝钗→袭人等，每张初定妆照+最终剧照成对"
+    },
+    {
+      "url": "https://cj.sina.cn/articles/view/1340604587/4fe800ab00100yvsp",
+      "title": "1987年红楼演员挂历，个个美艳动人",
+      "type": "page",
+      "account": "新浪",
+      "note": "1987年红楼演员挂历12张逐月剧照，印刷品级画面"
+    },
+    {
+      "url": "https://baijiahao.baidu.com/s?id=1597519473381899991&wfr=spider&for=pc",
+      "title": "经典！1987版《红楼梦》丫鬟配角试妆、定妆照",
+      "type": "page",
+      "account": "百家号",
+      "note": "紫鹃、雪雁、麝月、莺儿、司棋、小红、玉钏、龄官等十余位丫鬟逐一配图"
+    },
+    {
+      "url": "https://baijiahao.baidu.com/s?id=1795017758508570561&wfr=spider&for=pc",
+      "title": "87版《红楼梦》角色定妆，原版与最终版天差地别",
+      "type": "page",
+      "account": "百家号",
+      "note": "早期被弃用定妆照与正式剧照成对对比"
+    },
+    {
+      "url": "https://baike.baidu.com/tashuo/browse/content?id=efb5598d9561859a800a72fa",
+      "title": "87版红楼梦罕见试妆照，与正式角色大不一样",
+      "type": "page",
+      "account": "百度百科·TA说",
+      "note": "张莉紫鹃试妆、安雯黛玉试妆、沈璐黛玉试妆等，配最终剧照对比"
+    },
+    {
+      "url": "https://blog.sina.com.cn/s/blog_4d7d66d20100cqln.html",
+      "title": "22年前红楼梦中人今昔对比（组图）",
+      "type": "page",
+      "account": "新浪博客",
+      "note": "晴雯、邓婕、袁玫、东方闻樱、姬培杰、郭霄珍等当年剧照+近照"
+    },
+    {
+      "url": "https://m.toutiao.com/article/7307825293820166656/",
+      "title": "陈晓旭和张莉的20张合影",
+      "type": "page",
+      "account": "今日头条",
+      "note": "黛钗双人合影20张，含三大主演、赴港等生活合影"
+    },
+    {
+      "url": "https://www.toutiao.com/article/6775450449098048014",
+      "title": "1987年挂历上的《红楼梦》电视剧照",
+      "type": "page",
+      "account": "今日头条",
+      "note": "另一本1987年挂历逐月剧照，含秦可卿、香菱、晴雯、湘云等"
+    },
+    {
+      "url": "https://www.toutiao.com/article/7564252432940450338",
+      "title": "87版《红楼梦》宝黛钗定妆照：天上掉下个林妹妹",
+      "type": "page",
+      "account": "今日头条",
+      "note": "宝黛钗三位主角定妆照专题，逐张配造型解读"
+    },
+    {
+      "url": "https://www.chinanews.com.cn/yl/2012/09-26/4214873.shtml",
+      "title": "87版「红楼梦」25年后再聚首 独缺「林妹妹」（组图）",
+      "type": "page",
+      "account": "中国新闻网",
+      "note": "邓婕张莉欧阳奋强合影等，权威站点"
+    },
+    {
+      "url": "https://www.crt.com.cn/news2007/News/jryw/17623144431DA3A2C7FJKH95D4BHIH.html",
+      "title": "87版电视剧《红楼梦》开播30周年再聚首纪念音乐会（组图）",
+      "type": "page",
+      "account": "中红网",
+      "note": "人民大会堂音乐会全程组图，百位演员谢幕大合影"
+    },
+    {
+      "url": "https://ent.qingdaonews.com/2017-06/15/content_12077521_all.htm",
+      "title": "87版《红楼梦》主创重聚 你还认得出几个（图）",
+      "type": "page",
+      "account": "青岛新闻网",
+      "note": "周岭、牟一、金莉莉、张蕾、东方闻樱、胡泽红、袁玫等逐一现身"
+    },
+    {
+      "url": "https://www.peopleapp.com/rmharticle/30014711155",
+      "title": "泪目！宝玉凤姐再聚首，世间再无林妹妹",
+      "type": "page",
+      "account": "人民日报·人民号",
+      "note": "重聚合影与李耀宗画册内页图、幕后讲学照片"
+    }
+  ]
+}

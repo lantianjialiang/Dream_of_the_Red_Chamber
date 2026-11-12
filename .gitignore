@@ -1,0 +1,20 @@
+# 临时产物：采集明细、目检拼图、被剔除图片留档、无头浏览器缓存
+# 这些文件保留在本地磁盘供复核与复采，不进入版本库
+_tmp/
+_archive/
+
+# WorkBuddy 会话与工作区记忆（工具元数据，非站点内容）
+.workbuddy/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 系统杂项
+.DS_Store
+Thumbs.db
+
+# 原始书籍文件（EPUB / 扫描 PDF）：体积大、有版权风险，仅作本地出处依据，不入库
+# 只忽略目录下的直接内容，保留由书籍转出的文字稿
+data/books/*
+!data/books/text/
