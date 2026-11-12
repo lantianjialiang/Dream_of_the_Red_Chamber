@@ -7,6 +7,9 @@
 每页识别结果缓存到 _tmp/ocr_cache/<slug>/pNNNN.json，中断后重跑会跳过已完成页。
 仅对平均置信度低的页做「反相图」第二遍识别并逐行择优。
 人工目检校对只记录在 scripts/ocr_corrections.json，未校对页不宣称已核对。
+
+注意：本脚本只产出 OCR 参考初稿（_tmp/ocr_draft_*.md）。最终《宝黛话红楼》md 与 EPUB
+由 scripts/build_hy4_book.py 从多模态逐页目检分片 _tmp/hy4_pages/ 生成，勿用本脚本覆盖。
 """
 import argparse
 import json
@@ -111,7 +114,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--slug", default="baodai")
     ap.add_argument("--dir", default="_tmp/pdf_pages/baodai")
-    ap.add_argument("--out", default="data/books/text/宝黛话红楼.md")
+    ap.add_argument("--out", default="_tmp/ocr_draft_宝黛话红楼.md",
+                    help="OCR 参考初稿；最终 md/EPUB 由 build_hy4_book.py 从目检分片生成，勿覆盖")
     ap.add_argument("--title", default="宝黛话红楼")
     ap.add_argument("--limit", type=int, default=0, help="只处理前 N 页（调试用）")
     ap.add_argument("--second-pass-below", type=float, default=0.84)

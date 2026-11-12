@@ -61,7 +61,7 @@
 
 - **已完成文字书籍**：
   - 欧阳奋强《1987，我们的红楼梦》（2017）EPUB → `data/books/text/1987我们的红楼梦-欧阳奋强.md`（约 56 万字节，按原书章节顺序转纯文字，`<div class="title_pic">` 图注单独提取）。
-  - 《宝黛话红楼》（1987，陈晓旭 / 邓婕 / 欧阳奋强 / 王贵娥 合著）PDF → `data/books/text/宝黛话红楼.md`（260 页、约 10.4 万字，平均置信度 0.848，59 页反相复核、5 页目检精校）：原书是纯扫描、无文字层，先由 `scripts/pdf_pages_to_jpg.py` 抽内嵌页图，再用本地 RapidOCR（onnxruntime）逐页识别，低置信页做反相图二次识别；前言等 5 页由多模态模型看页面图像逐字精校，精校全文与错字修正表在 `scripts/ocr_corrections.json`。**其余页为自动识别、未逐页人工核对，引用请以原书扫描页为准**，不把 OCR 文本直接当作故事入库。
+  - 《宝黛话红楼》（1987，陈晓旭 / 邓婕 / 欧阳奋强 / 王贵娥 合著）PDF → `data/books/text/宝黛话红楼.md` 与 `data/books/text/宝黛话红楼.epub`。**全书 260 页由多模态模型逐页查看扫描页图像重新识别**（约 10.5 万字、121 个小节），按原书逐字转录、模糊字标「□」，每页保留「## PDF 第 N 页」便于与扫描页对照。逐页原稿在 `_tmp/hy4_pages/`（本地保留、不入库），由 `scripts/build_hy4_book.py` 合并成 md 与 EPUB3（5 卷 / 121 章，含封面、双层目录，每节带页码标记）。早期 RapidOCR 流程（`pdf_pages_to_jpg.py` + `pdf_ocr_to_text.py`）只作参考初稿、**不再是交付文字稿**；引用请以原书扫描页为准，不把识别文本直接当作故事入库。
 - **书中图片**：148 张内嵌插图入库（`bk-*`），141 条原书图注逐张对应；289 页画册扫描目检后收录 272 页（`bkp-*`），整页含多帧照片与版面文字，一律不强行归属具体人物。
 - **纪念画册不转文字**：两本李耀宗纪念画册（上 / 下册各 145 页）是摄影集，抽样每页仅 30–180 字回目、判词、图注，无长篇正文，故只收录影像，不生成文字书籍。
 - **一手材料入库**：`scripts/memoir_to_stories.py` 从回忆录按人物拆出 19 册的 56 条幕后细节与 28 条第一人称语录，逐条标注书名、年份与章节，并入各人物详情页已有的「幕后细节」「她说」，资料依据处给出可核查文字版链接。刘姥姥、薛宝琴原书无专章，不强补。
@@ -86,7 +86,8 @@ python scripts/make_web_thumbs.py                # 为 web-* 补生成 webt-* �
 python scripts/book_to_text.py                   # EPUB → 文字书籍 + 插图索引
 python scripts/check_pdf_text.py                 # 复检扫描 PDF 是否含文字层
 python scripts/pdf_pages_to_jpg.py --match 宝黛 --out _tmp/pdf_pages/baodai   # 扫描页 → 内嵌 JPG
-python scripts/pdf_ocr_to_text.py                # 逐页 OCR → data/books/text/宝黛话红楼.md
+python scripts/pdf_ocr_to_text.py                # OCR 参考初稿 → _tmp/ocr_draft_*.md
+python scripts/build_hy4_book.py                 # 目检分片 → 宝黛话红楼.md + .epub（最终稿）
 python scripts/book_pdf_images.py                # 画册 PDF → 整页 JPEG（_tmp/book_pages/）
 python scripts/import_book_photos.py             # 重建 data/photos-book.js
 python scripts/make_thumbs_generic.py _tmp/thumb_jobs.json
