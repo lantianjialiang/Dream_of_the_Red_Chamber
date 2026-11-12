@@ -63,7 +63,12 @@ def main():
                 why = '配文与红楼主题无关（侧栏推荐位）'
         if why:
             reasons[m['file']] = why
-            for f in (m['file'], m.get('thumb', '')):
+            files = [m['file'], m.get('thumb', '')]
+            # web-NNNN.* 的缩略图命名规则固定为 webt-NNNN.jpg，manifest 里不存该字段，
+            # 剔除时一并移走，避免 assets/photos/ 留下孤儿缩略图。
+            if stem.startswith('web-'):
+                files.append('webt-' + stem.replace('web-', '', 1) + '.jpg')
+            for f in files:
                 src = os.path.join(DEST, f) if f else ''
                 if src and os.path.exists(src):
                     shutil.move(src, os.path.join(EXCLUDED, f))
