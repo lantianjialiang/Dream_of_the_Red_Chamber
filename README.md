@@ -4,14 +4,14 @@
 
 ## 站点结构
 
-- `index.html` — 唯一页面，单页 hash 路由：人物图鉴（248 人，其中 21 位的人物详情页内含双线故事）、36 集分集剧情、关系图、时间线、音乐、幕后、纪念、结局对照、信源勘误、图库（**2780 张**）。全站统一浅色主题。
+- `index.html` — 唯一页面，单页 hash 路由：人物图鉴（248 人，其中 21 位的人物详情页内含双线故事）、36 集分集剧情、关系图、时间线、音乐、幕后、纪念、结局对照、图库（**3416 张**）、信源勘误。全站统一浅色主题。
 - `data/*.js` — 主站数据（全局 `window.HLM87`）。
   - `data/photos.js` — 资料馆原有 149 张图库记录（逐张 `host` / `srcUrl` / `date`）。
   - `data/photos-nverce.js` — 由 `scripts/merge_photos.js` 生成的 201 帧专采照片（`window.HLM87.extraPhotos`）。
-  - `data/photos-web.js` — v2.2 / v2.4 / v2.7 网络补采 2010 张（`window.HLM87.webPhotos`），由 `scripts/fetch_web_photos.py --build-only` 从 `_tmp/web_manifest.json` 重建；第三轮新增图由 `scripts/fetch_more_photos.py` 采集并追加到同一清单；逐张含原文标题、采集渠道、原文配文与人物归属方式。
+  - `data/photos-web.js` — v2.2 / v2.4 / v2.7 / v2.8 网络补采 2646 张（`window.HLM87.webPhotos`），由 `scripts/fetch_web_photos.py --build-only` 从 `_tmp/web_manifest.json` 重建；第三轮由 `scripts/fetch_more_photos.py`、第四轮由 `scripts/fetch_round4_photos.py` 采集并追加到同一清单；逐张含原文标题、采集渠道、原文配文与人物归属方式。
   - `data/photos-book.js` — 书籍影像 420 张（`window.HLM87.bookPhotos`），由 `scripts/import_book_photos.py` 生成：回忆录 EPUB 插图 148 张 + 纪念画册扫描页 272 张；逐张含书名、章节/页码、原书图注与归属方式。
   - 四组数据在运行时 concat 进 `H.photos.items`，形成全站唯一图库。
-- `assets/photos/` — **唯一图库目录**，2780 张原图与对应缩略图（`nv-`/`nvt-`、`web-`/`webt-`、`bk-`/`bkt-`、`bkp-`/`bkpt-` 前缀）。
+- `assets/photos/` — **唯一图库目录**，3416 张原图与对应缩略图（`nv-`/`nvt-`、`web-`/`webt-`、`bk-`/`bkt-`、`bkp-`/`bkpt-` 前缀）。
 - `data/books/` — 原始书籍（出处依据）：欧阳奋强回忆录 EPUB、两本李耀宗纪念画册 PDF、1987 年《宝黛话红楼》PDF；`data/books/text/` 为整理出的文字书籍。
 - `nverce/` — 21 位人物的深度资料数据与采集底本（**不再是独立页面**）：
   - `data/content.js` — 林黛玉 / 陈晓旭（双线故事、判词、诗作、语录、12 条信源、考据说明）。
@@ -34,7 +34,7 @@
 - 这些内容**平铺呈现，无标签页、无「读两卷故事」跳转、无上一册/下一册导航**。旧 `#/book/<id>` 地址仅作兼容，直接渲染对应人物详情。
 - 图库四路合并为单一 `#/photos`，可按角色 / 演员 / 描述 / 来源站点检索，按剧照 / 生活照与 7 类采集来源筛选，每批渲染 120 张；合影按 `、` 拆分索引，同一张可出现在多位人物页但只计一次。
 
-## v2.4–v2.7 图库扩采与归属修复（2026-11-12）
+## v2.4–v2.8 图库扩采与归属修复（2026-11-12 / 11-13）
 
 ### 数量与来源
 
@@ -42,12 +42,23 @@
 |---|---|---|
 | 资料馆原图库 | 149 | 原有 |
 | 女儿册专采 | 201 | 原有 |
-| 微信公众号图文 | 762 | 累计 8 + 新增图源 + v2.7 九篇新公众号 |
-| 公开图文页 | 664 | 澎湃、新浪、网易、腾讯新闻、搜狐、美篇、腾讯搜一搜、新浪图片、新民晚报等 |
-| 公开图片检索 | 584 | Bing 定向检索 + v2.7 360 图片检索（62 位人物 + 24 组主题词） |
+| 微信公众号图文 | 919 | 累计源 + v2.7 九篇 + v2.8 十篇新公众号 |
+| 公开图文页 | 887 | 澎湃、新浪、网易、腾讯新闻与腾讯搜一搜、搜狐、美篇、凤凰网、B站专栏、崇真艺客等 |
+| 公开图片检索 | 840 | Bing 定向 + v2.7 360 首页 + v2.8 360 分页接口与必应异步分页（118 组检索词） |
 | 回忆录插图 | 148 | 欧阳奋强回忆录 EPUB 内嵌插图 |
 | 纪念画册扫描 | 272 | 李耀宗纪念画册上/下册整页扫描（封面/版权/目录/纯文字页已目检剔除 17 页） |
-| **合计** | **2780** | v2.7 第三轮新增 774 张 |
+| **合计** | **3416** | v2.8 第四轮净增 636 张 |
+
+### v2.8 第四轮补采（2026-11-13）
+
+- 新增 `scripts/sources-round4.json`（33 个未采过的图文源：欧阳宝玉《高清精美剧照》、微博旅者《87版定妆照》、红楼轶事《杨树云的 8 张设计图》、中国电视《杨树云口述》、大咖SH《史上最全聚首》等 10 篇公众号图文，以及网易号近 150 幅原版画册、澎湃艺非凡、B站专栏杂志封面、凤凰网老挂历、崇真艺客服装设计手稿等）与 `scripts/fetch_round4_photos.py`。
+- **360 图片检索换成分页接口** `https://image.so.com/j?q=...&pn=180`：一次可取约 150–162 条（第三轮 HTML 首页只有 60–90 条），字段 `img` / `link` / `title` / `site` 齐全；**另开必应异步分页** `https://www.bing.com/images/async?q=...&first=1,36,71,106`（`m` 属性含 `murl` 原图、`purl` 真实来源页、`t` 图注），两渠道共享每人 10 / 每主题 20 的配额，共 118 组检索词（63 位人物 + 55 组场景/物件/幕后工种主题）。
+- 本轮候选 1763 → 与图库去重 952 → 下载可用 **659 张**；14 张拼图逐格目检 + 12 张存疑单图放大复核后剔除 **23 张**（纯文字/书封书页 9、二维码 4、logo 与推广卡 2、无关现代与风景静物 3、其他影视片段截图 1、无关插画 4），净增 **636 张**；网络补采 2010 → 2646 张，全站 2780 → **3416 张**。
+- 复核时救回 7 张被子代理误判的 87 版剧照：杨树云造型设计手稿（工笔仕女画/发髻线稿，来自《杨树云的 8 张设计图》，配文明确「对比剧中元春凤冠」「旺儿媳妇」「瑞珠宝珠」）、元春凤冠红袍/黄袍定妆照、柳湘莲剧照特写。**长期规则再确认：87 版总化妆师与服装设计的造型手稿、以及带清晰剧照的挂历/画册内页属收录范围，不得当作「手绘插画/戏曲扮相」剔除。**
+- 修正 `curate_photos.py`：门户页逐图图注常带「打开网易新闻 查看精彩图片」引导语，剥掉前缀后再判定；并允许角色名/演员名（`KEYS`）佐证配文相关性，避免误杀 16 张有效逐图图注。
+- 不可用渠道如实记录：百度图片 `acjson` 返回 `Forbid spider access`、搜狗图片 `napi` 返回 `forbid`、搜狗图片 HTML 的 `link` 只指向搜狗中转页而非原文页面（故不采）、微博图片搜索登录墙、知乎 403、今日头条固定反爬壳页、文学城 502、kknews 繁体页/多彩贵州网/环球网 403。
+- 导航顺序按用户要求调整：「图库」从最后一项移到**倒数第二**（「信源·勘误」之前），样式与路由不变。
+
 
 ### v2.7 第三轮补采（2026-11-12）
 
@@ -100,11 +111,12 @@ python scripts/import_book_photos.py             # 重建 data/photos-book.js
 python scripts/make_thumbs_generic.py _tmp/thumb_jobs.json
 python scripts/memoir_to_stories.py              # 回忆录 → nverce/data/memoir.js
 python scripts/fetch_more_photos.py              # v2.7 新增图文页 + 360 图片检索（增量）
+python scripts/fetch_round4_photos.py           # v2.8 360 分页 + 必应异步分页 + 33 个新图文源
 python scripts/make_web_thumbs.py                # 补生成 webt-* 缩略图（增量）
 python scripts/curate_photos.py                  # 按 exclude.json 目检名单剔除并重建数据
 node nverce/tools/build_bridge.js                # 增删人物 / 故事后重建人物索引
 node verify-render.js                            # 主站 17 个视图冒烟测试 + 架构约束
-node nverce/tools/verify.js                      # 数据 / 出处 / 2780 张图片存在性 / 站内链接（47 项）
+node nverce/tools/verify.js                      # 数据 / 出处 / 3416 张图片存在性 / 站内链接（47 项）
 ```
 
 交付前两套校验必须全绿；涉及视觉改动时用无头 Chrome（`--headless=new --screenshot --allow-file-access-from-files --window-size=1280,1000 --virtual-time-budget=5000`）截图自查。

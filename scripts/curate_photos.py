@@ -26,10 +26,23 @@ EXCLUDED = os.path.join(TMP, 'excluded')
 os.makedirs(EXCLUDED, exist_ok=True)
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from fetch_web_photos import TOPIC, build_js  # noqa: E402
+from fetch_web_photos import TOPIC, KEYS, build_js  # noqa: E402
 
 AD_HOC = re.compile(r'下载APP|关注 确定不再关注|赛博对话|走电影|营业厅|'
                     r'网络有限公司|点击上方|长按指纹|扫码|视频号')
+
+# 门户页会给逐图图注加「打开网易新闻 查看精彩图片 XXX」这类引导语，
+# 剥掉后 XXX 才是真正的图注（如「王夫人周贤珍老师」「尤三姐周月」）。
+PORTAL_PREFIX = re.compile(
+    r'^\s*(?:打开(?:网易|今日头条|百度|搜狐|腾讯|新浪|凤凰)新闻\s*)?查看精彩图片\s*')
+
+
+def relevant(ctx):
+    """配文里出现红楼主题词或任一角色/演员名，就视为正文配文而非侧栏推荐位。"""
+    c = PORTAL_PREFIX.sub('', ctx).strip()
+    if TOPIC.search(c):
+        return True
+    return any(k in c for k in KEYS if len(k) >= 2)
 
 
 def main():
@@ -56,10 +69,10 @@ def main():
         elif in_ranges(stem):
             why = '目检名单：门户页「相关推荐」位视频封面'
         else:
-            ctx = (m.get('ctx') or '').strip()
+            ctx = PORTAL_PREFIX.sub('', (m.get('ctx') or '').strip()).strip()
             if AD_HOC.search(ctx):
                 why = '推广/APP/栏目文字'
-            elif m.get('origin') == '公开图文页' and len(ctx) > 8 and not TOPIC.search(ctx):
+            elif m.get('origin') == '公开图文页' and len(ctx) > 8 and not relevant(ctx):
                 why = '配文与红楼主题无关（侧栏推荐位）'
         if why:
             reasons[m['file']] = why

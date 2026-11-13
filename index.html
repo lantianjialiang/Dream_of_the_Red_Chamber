@@ -174,8 +174,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     <a class="menu" data-v="behind" href="#/behind" data-zh="幕后故事·轶闻" data-en="Behind &amp; Crew">幕后故事·轶闻</a>
     <a class="menu" data-v="memorial" href="#/memorial" data-zh="纪念" data-en="Memorial">纪念</a>
     <a class="menu" data-v="compare" href="#/compare" data-zh="结局对照" data-en="Endings">结局对照</a>
-    <a class="menu" data-v="sources" href="#/sources" data-zh="信源·勘误" data-en="Sources">信源·勘误</a>
     <a class="menu" data-v="photos" href="#/photos" data-zh="图库" data-en="Gallery">图库</a>
+    <a class="menu" data-v="sources" href="#/sources" data-zh="信源·勘误" data-en="Sources">信源·勘误</a>
     <button class="langbtn" id="langbtn" onclick="toggleLang()">EN</button>
   </div>
 </nav>
@@ -998,7 +998,7 @@ function viewSources(){
     });
     imgRows.sort(function(a,b){ return b.n-a.n; });
     html+='<h3>'+L("本轮影像信源（按原文页面聚合）","Image sources collected this round (grouped by article)")+'</h3>'+
-      '<p class="sub">'+L("共 "+web.length+" 张补采影像，来自 "+imgRows.length+" 个原文页面／检索条目。公众号图源包括「欧阳宝玉」（欧阳奋强）、DJ雅清、高原羚羊、九门内外、视听博刊、中国古诗文、我来我看见等；公开图文页包括澎湃新闻、羊城晚报／金羊网、新浪（含新浪图片 35 张图集）、网易、腾讯新闻与腾讯搜一搜高清剧照专题、搜狐挂历与杂志封面、新民晚报、书画家园、百度百科 TA说等；第三轮另经 360 图片检索按 62 位人物与经典场景定向补采，每条均保留真实来源页。人物归属分「逐图标签／配文推断／检索关键词／未判定」，未判定者标为「剧组 · 花絮」，不强行安到某个人名下。",
+      '<p class="sub">'+L("共 "+web.length+" 张补采影像，来自 "+imgRows.length+" 个原文页面／检索条目。公众号图源包括「欧阳宝玉」（欧阳奋强）、DJ雅清、高原羚羊、九门内外、视听博刊、中国古诗文、我来我看见等；公开图文页包括澎湃新闻、羊城晚报／金羊网、新浪（含新浪图片 35 张图集）、网易、腾讯新闻与腾讯搜一搜高清剧照专题、搜狐挂历与杂志封面、新民晚报、书画家园、百度百科 TA说等；第三轮经 360 图片检索按 62 位人物与经典场景定向补采；第四轮再经 360 图片分页接口与必应图片异步分页，按 118 组人物 / 场景 / 幕后工种检索词补采，每条均保留真实来源页。人物归属分「逐图标签／配文推断／检索关键词／未判定」，未判定者标为「剧组 · 花絮」，不强行安到某个人名下。",
         web.length+" images from "+imgRows.length+" source pages, including WeChat Official Accounts (Ouyang Fenqiang's 'Ouyang Baoyu', DJ Yaqing and others) and public press galleries. Attribution confidence is marked per photo; unattributable group shots are labelled 'Crew / candid'.")+'</p>'+
       '<div class="fig-scroll"><table><tr><th style="width:150px">'+L("出处","Publisher")+'</th><th>'+L("文章 / 页面","Article / page")+'</th><th style="width:56px">'+L("张数","Photos")+'</th><th style="width:110px">'+L("渠道","Channel")+'</th><th style="width:70px">'+L("链接","Link")+'</th></tr>';
     imgRows.slice(0,40).forEach(function(r){
@@ -1054,7 +1054,7 @@ function viewPhotos(){
   var nBase=ORIGIN_COUNT["资料馆原图库"]||0, nNv=ORIGIN_COUNT["女儿册采集"]||0, nWeb=(H.webPhotos||[]).length, nBook=(H.bookPhotos||[]).length;
   return '<h1>'+L("图库","Gallery")+'</h1>'+
   '<div class="card" style="background:#fbf4ee;border-color:#e8d8c8"><p class="small">'+esc(H.photos.note)+'</p>'+
-  '<p class="small" style="margin-top:6px"><b>'+L("已合并","Merged")+'</b>：'+L("全站 "+H.photos.items.length+" 张图片统一存放于 assets/photos/："+nBase+" 张资料馆原有采集、"+nNv+" 帧林黛玉 / 陈晓旭专题采集，另有 "+nWeb+" 张本轮网络补采与 "+nBook+" 张书籍影像（欧阳奋强回忆录插图 + 李耀宗纪念画册扫描页，逐张标注书名、章节或页码与原书图注）。补采来源含微信公众号图文（欧阳宝玉／欧阳奋强、DJ雅清、高原羚羊、红楼轶事、红楼图志等）、公开图文页（澎湃、羊城晚报、新浪图片、网易、腾讯搜一搜、搜狐挂历与杂志、新民晚报等）与定向图片检索（Bing + 360 图片检索，含经典场景、挂历、扑克牌、赴港旧照等主题）。每张图均保留原文页面链接、出处公众号／站点、文章标题、采集日期与原始图片地址；画册整页扫描不强行归属具体人物，一律标「剧组 · 花絮」。人物归属依据原文逐图配文或检索关键词，未逐张人工核对，卡片上均标明归属方式；如有出入以原文页面为准。",
+  '<p class="small" style="margin-top:6px"><b>'+L("已合并","Merged")+'</b>：'+L("全站 "+H.photos.items.length+" 张图片统一存放于 assets/photos/："+nBase+" 张资料馆原有采集、"+nNv+" 帧林黛玉 / 陈晓旭专题采集，另有 "+nWeb+" 张本轮网络补采与 "+nBook+" 张书籍影像（欧阳奋强回忆录插图 + 李耀宗纪念画册扫描页，逐张标注书名、章节或页码与原书图注）。补采来源含微信公众号图文（欧阳宝玉／欧阳奋强、DJ雅清、高原羚羊、红楼轶事、红楼图志等）、公开图文页（澎湃、羊城晚报、新浪图片、网易、腾讯搜一搜、搜狐挂历与杂志、新民晚报等）与定向图片检索（Bing + 360 图片检索及其分页接口，含经典场景、挂历、扑克牌、赴港旧照、服装与化妆设计手稿等主题）。每张图均保留原文页面链接、出处公众号／站点、文章标题、采集日期与原始图片地址；画册整页扫描不强行归属具体人物，一律标「剧组 · 花絮」。人物归属依据原文逐图配文或检索关键词，未逐张人工核对，卡片上均标明归属方式；如有出入以原文页面为准。",
     H.photos.items.length+" images now share one folder: "+nBase+" archive originals, "+nNv+" Lin Daiyu portraits, "+nWeb+" collected web images (WeChat articles, public galleries, targeted image search) and "+nBook+" book images (memoir illustrations + commemorative album scans, each citing the book and chapter/page). Every item keeps its source page, publisher, article title, collection date and original image URL. Character attribution is inferred from original captions or search keywords, shown on each card and not verified photo by photo; full album pages and unattributable shots are marked \"Crew / candid\".")+'</p></div>'+
   '<div class="ph-filter">'+
     '<input id="pq" placeholder="'+L("搜索角色名 / 演员名 / 描述 / 来源…","Search character / actor / description / source…")+'" value="'+esc(photoState.q)+'">'+
