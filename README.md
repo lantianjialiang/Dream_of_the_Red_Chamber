@@ -5,7 +5,7 @@
 ## 站点结构
 
 - `index.html` — 唯一页面，单页 hash 路由：人物图鉴（248 人，其中 21 位的人物详情页内含双线故事）、36 集分集剧情、关系图、时间线、音乐、幕后、纪念、结局对照、图库（**3416 张**）、信源勘误。全站统一浅色主题。
-- `data/*.js` — 主站数据（全局 `window.HLM87`）。
+- `data/*.js` — 主站数据与 21 册人物深度资料（全局 `window.HLM87` / `window.BOOKS` 等）。
   - `data/photos.js` — 资料馆原有 149 张图库记录（逐张 `host` / `srcUrl` / `date`）。
   - `data/photos-nverce.js` — 由 `scripts/merge_photos.js` 生成的 201 帧专采照片（`window.HLM87.extraPhotos`）。
   - `data/photos-web.js` — v2.2 / v2.4 / v2.7 / v2.8 网络补采 2646 张（`window.HLM87.webPhotos`），由 `scripts/fetch_web_photos.py --build-only` 从 `_tmp/web_manifest.json` 重建；第三轮由 `scripts/fetch_more_photos.py`、第四轮由 `scripts/fetch_round4_photos.py` 采集并追加到同一清单；逐张含原文标题、采集渠道、原文配文与人物归属方式。
@@ -13,15 +13,15 @@
   - 四组数据在运行时 concat 进 `H.photos.items`，形成全站唯一图库。
 - `assets/photos/` — **唯一图库目录**，3416 张原图与对应缩略图（`nv-`/`nvt-`、`web-`/`webt-`、`bk-`/`bkt-`、`bkp-`/`bkpt-` 前缀）。
 - `data/books/` — 原始书籍（出处依据）：欧阳奋强回忆录 EPUB、两本李耀宗纪念画册 PDF、1987 年《宝黛话红楼》PDF；`data/books/text/` 为整理出的文字书籍。
-- `nverce/` — 21 位人物的深度资料数据与采集底本（**不再是独立页面**）：
-  - `data/content.js` — 林黛玉 / 陈晓旭（双线故事、判词、诗作、语录、12 条信源、考据说明）。
+- **v2.9 起已无 `nverce/` 目录**：原「女儿册」的数据、工具与跳转页全部并入主目录，不再是独立页面或独立结构。
+  - `data/books-content.js` — 林黛玉 / 陈晓旭（双线故事、判词、诗作、语录、12 条信源、考据说明）。
   - `data/people-extra.js` — 其余 20 位人物的双线故事、`REF` 信源表、`CHAR2ID` 照片映射、出处规范。
   - `data/memoir.js` — 回忆录一手材料（19 册、56 条幕后 + 28 条语录），由 `scripts/memoir_to_stories.py` 生成；运行时追加到各册已有的 `behind` / `quotes`，不新增板块。
-  - `data/bridge.js` — 人物 → `route`（`#/char/<姓名>`）、故事数、影像数、新增信源；由 `nverce/tools/build_bridge.js` 生成，勿手工编辑。
-  - `images/` `thumbs/` — 201 帧专采原图与缩略图的采集底本，供复采；站点实际读取 `assets/photos/` 中的副本。
-  - `index.html` — 旧地址的浅色跳转页，指向主站 `#/list`。
-  - `tools/` — 图片采集、缩略图生成、索引生成、集成校验脚本。
-  - 已停用的黑色子站 `assets/app.js` / `style.css`、旧台账 `data_photos.json` 移到 `_archive/retired/`（不入库）。
+  - `data/bridge.js` — 人物 → `route`（`#/char/<姓名>`）、故事数、影像数、新增信源；由 `scripts/build_bridge.js` 生成，勿手工编辑。
+  - `data/nv-photos-source.js` — 201 帧专采照片的采集源清单（`window.PHOTOS`），供 `scripts/merge_photos.js` 复采；主站运行时不加载。
+  - `nverce-redirect.html` — 旧地址的浅色跳转页，指向主站 `#/list`（原 `nverce/index.html`）。
+  - `scripts/` — 采集、复采、缩略图、索引生成与两套校验脚本（原 `nverce/tools/` 的 4 个脚本已并入）。
+  - 402 个与 `assets/photos/nv-*`、`nvt-*` **逐字节相同**的采集底本（约 56MB）已移出仓库，归档到 `_archive/retired/nverce-source/{images,thumbs}`（本地保留、不入库）；已停用的黑色子站 `assets/app.js` / `style.css`、旧台账 `data_photos.json` 同在 `_archive/retired/`。
 
 ## 人物图鉴与人物详情页（v2.3 起）
 
@@ -109,22 +109,22 @@ python scripts/build_hy4_book.py                 # 目检分片 → 宝黛话红
 python scripts/book_pdf_images.py                # 画册 PDF → 整页 JPEG（_tmp/book_pages/）
 python scripts/import_book_photos.py             # 重建 data/photos-book.js
 python scripts/make_thumbs_generic.py _tmp/thumb_jobs.json
-python scripts/memoir_to_stories.py              # 回忆录 → nverce/data/memoir.js
+python scripts/memoir_to_stories.py              # 回忆录 → data/memoir.js
 python scripts/fetch_more_photos.py              # v2.7 新增图文页 + 360 图片检索（增量）
 python scripts/fetch_round4_photos.py           # v2.8 360 分页 + 必应异步分页 + 33 个新图文源
 python scripts/make_web_thumbs.py                # 补生成 webt-* 缩略图（增量）
 python scripts/curate_photos.py                  # 按 exclude.json 目检名单剔除并重建数据
-node nverce/tools/build_bridge.js                # 增删人物 / 故事后重建人物索引
+node scripts/build_bridge.js                     # 增删人物 / 故事后重建 data/bridge.js
 node verify-render.js                            # 主站 17 个视图冒烟测试 + 架构约束
-node nverce/tools/verify.js                      # 数据 / 出处 / 3416 张图片存在性 / 站内链接（47 项）
+node scripts/verify.js                           # 数据 / 出处 / 3416 张图片存在性 / 站内链接（47 项）
 ```
 
 交付前两套校验必须全绿；涉及视觉改动时用无头 Chrome（`--headless=new --screenshot --allow-file-access-from-files --window-size=1280,1000 --virtual-time-budget=5000`）截图自查。
 
-## 目录约定（v2.4 整理）
+## 目录约定（v2.9 整理）
 
 - `.gitignore` 忽略 `_tmp/`（采集明细、目检拼图、被剔除图片留档、浏览器缓存）、`_archive/`（停用资源与历史拼图）、`.workbuddy/`（会话与工作区记忆）、Python 缓存，以及 `data/books/*`：原始 EPUB / 扫描 PDF 约 190MB 且有版权风险，已从 git 索引移除（`git rm --cached`），**本地文件保留**作出处依据。例外 `!data/books/text/` 保证站点「查看本站整理的可核查文字版」链接与校验所依赖的 md 仍在库内。
-- 站点运行必需的全部文件（`index.html`、`data/`、`assets/photos/`、`nverce/data/`、`scripts/`、`*.md`、校验脚本、文字书籍）纳入版本管理；原始书籍不再纳入。
+- 站点运行必需的全部文件（`index.html`、`nverce-redirect.html`、`data/`、`assets/photos/`、`scripts/`、`*.md`、校验脚本、文字书籍）纳入版本管理；原始书籍与 v2.9 移出的 402 张重复采集底本不再纳入。
 - 被目检剔除的图片统一移到 `_tmp/excluded/`，不直接删除；名单与原因在 `scripts/exclude.json`。
 
 环境说明：本机为 Windows + Python 3.13。此前「装不了 Pillow / PDF 库」是 pip 源问题：默认清华源失败，改用 `-i https://mirrors.aliyun.com/pypi/simple/` 后 Pillow 13、PyMuPDF 2.1、pdfplumber、pypdf、RapidOCR(onnxruntime) 全部安装成功；系统级 tesseract 仍不可用，中文 OCR 走 RapidOCR。早期手写的 `sniff()` / `dims()`、DCTDecode JPEG 抽取与「本地 HTTP Server + 无头 Chrome Canvas」缩略图方案保留为无依赖回退。

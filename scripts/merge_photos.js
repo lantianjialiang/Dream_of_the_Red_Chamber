@@ -1,12 +1,13 @@
 /* 把「女儿册」专采的 201 帧林黛玉 / 陈晓旭照片并入主站唯一图库
  * 用法： node scripts/merge_photos.js
  *
- * 1) 复制 nverce/images/*  → assets/photos/nv-*
- *    nverce/thumbs/*        → assets/photos/nvt-*
- * 2) 依据 nverce/data/photos.js 的原始出处字段，生成 data/photos-nverce.js
+ * 1) 复制 _archive/retired/nverce-source/images/* → assets/photos/nv-*
+ *    _archive/retired/nverce-source/thumbs/*       → assets/photos/nvt-*
+ * 2) 依据 data/nv-photos-source.js 的原始出处字段，生成 data/photos-nverce.js
  *    （window.HLM87.extraPhotos），由 index.html 在运行时 concat 进 H.photos.items。
  *
- * 原始采集底本保留在 nverce/images、nverce/thumbs，供 fetch_photos.py 复采；
+ * 采集底本（与 assets/photos/ 逐字节相同的副本，已移出仓库）保留在
+ * _archive/retired/nverce-source/，供 scripts/fetch_nverce_photos.py 复采；
  * 站点实际只读取 assets/photos/ 这一个图库目录。
  */
 const fs = require('fs');
@@ -14,10 +15,10 @@ const path = require('path');
 const vm = require('vm');
 
 const SITE = path.resolve(__dirname, '..');
-const SRC = path.join(SITE, 'nverce');
+const SRC = path.join(SITE, '_archive', 'retired', 'nverce-source'); // 采集底本（本地归档，已移出 git）
 const DEST = path.join(SITE, 'assets', 'photos');
 const ctx = vm.createContext({ window: {}, console: console });
-vm.runInContext(fs.readFileSync(path.join(SRC, 'data/photos.js'), 'utf8'), ctx, { filename: 'nverce/data/photos.js' });
+vm.runInContext(fs.readFileSync(path.join(SITE, 'data/nv-photos-source.js'), 'utf8'), ctx, { filename: 'data/nv-photos-source.js' });
 const PHOTOS = ctx.window.PHOTOS || [];
 
 function base(p) { return path.basename(p); }

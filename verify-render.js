@@ -17,11 +17,9 @@ for (const f of files) {
   if (f === "photos-nverce.js") console.log("[data] extraPhotos:", (HLM.HLM87.extraPhotos || []).length);
   if (f === "photos-web.js") console.log("[data] webPhotos:", (HLM.HLM87.webPhotos || []).length);
 }
-// 人物深度资料（双线故事 / 判词 / 信源 / 索引），主站 index.html 通过 <script> 引入
-["nverce/data/content.js", "nverce/data/people-extra.js", "nverce/data/memoir.js", "nverce/data/bridge.js"].forEach(function (f) {
-  eval(fs.readFileSync(path.join(root, f), "utf8"));
-});
-console.log("[data] loaded:", files.length, "main files + 4 profile files; keys:", Object.keys(HLM).join(", "));
+// 21 册人物深度资料（双线故事 / 回忆录 / 信源 / 索引）已并入 data/，由上面的自动加载一并读取；
+// data/nv-photos-source.js 是采集源清单（window.PHOTOS），仅复采用、主站运行时不加载。
+console.log("[data] loaded:", files.length, "data files; keys:", Object.keys(HLM).join(", "));
 
 // ---- DOM shim ----
 const app = { innerHTML: "" };
@@ -121,14 +119,14 @@ check("图库卡片带出处链接与归属标注", registry["pres"].innerHTML.i
 
 // ---- 架构约束：不得再出现独立黑色子站入口 / 独立册页 ----
 check("主站导航已移除 special 样式按钮", html.indexOf("menu special") < 0);
-check("主站不再链接 nverce/index.html", html.indexOf("nverce/index.html") < 0);
-check("主站引入人物册数据与四路合并图库数据", html.indexOf("nverce/data/people-extra.js") > 0 && html.indexOf("nverce/data/memoir.js") > 0 && html.indexOf("data/photos-nverce.js") > 0 && html.indexOf("data/photos-web.js") > 0 && html.indexOf("data/photos-book.js") > 0);
+check("主站不再引用独立子站，人物数据统一从 data/ 加载", html.indexOf("nverce/") < 0 && html.indexOf("data/books-content.js") > 0);
+check("主站引入人物册数据与四路合并图库数据", html.indexOf("data/people-extra.js") > 0 && html.indexOf("data/memoir.js") > 0 && html.indexOf("data/bridge.js") > 0 && html.indexOf("data/photos-nverce.js") > 0 && html.indexOf("data/photos-web.js") > 0 && html.indexOf("data/photos-book.js") > 0);
 check("主站不再有独立册页视图 / 册卡网格 / 双卷标签页", html.indexOf("viewBook(") < 0 && html.indexOf("bookletCards()") < 0 && html.indexOf("bookgrid") < 0 && html.indexOf("pane-real") < 0 && html.indexOf("bookTab(") < 0);
 check("人物详情直接拼装双线故事与资料依据", html.indexOf("charStorySections(B,c.name)") > 0 && html.indexOf("charSourceBox(B)") > 0);
 check("旧 #/book/ 地址仍兼容，落到人物详情", html.indexOf('case "book"') > 0 && html.indexOf("viewChar(bb&&bb.name") > 0);
 check("每张补采影像均有出处字段", WEB.length > 0 && WEB.every(function(p){ return p.host && p.srcUrl && p.date && p.origin && p.title; }));
-const sub = fs.readFileSync(path.join(root, "nverce/index.html"), "utf8");
-check("nverce/index.html 已改为跳转主站人物图鉴", sub.indexOf("../index.html#/list") >= 0 && sub.indexOf("assets/app.js") < 0);
+const sub = fs.readFileSync(path.join(root, "nverce-redirect.html"), "utf8");
+check("nverce-redirect.html 为跳转主站人物图鉴的浅色页", sub.indexOf("index.html#/list") >= 0 && sub.indexOf("../index.html") < 0 && sub.indexOf("assets/app.js") < 0);
 
 console.log("\nRESULT: views ok=" + ok + " fail=" + fail);
 process.exit(fail ? 1 : 0);

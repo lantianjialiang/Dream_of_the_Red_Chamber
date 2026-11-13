@@ -7,7 +7,7 @@
   2. 每条 src 写明书名、年份与章节，可在 data/books/text/ 的文字书籍里核查。
   3. quotes 只收书中明确以第一人称自述的引语，from 注明「欧阳奋强记述」，
      避免被误读为演员直接接受本站采访。
-  4. 不新增页面 / 板块 / 按钮；产出仅为 nverce/data/memoir.js，
+  4. 不新增页面 / 板块 / 按钮；产出仅为 data/memoir.js，
      由 index.html 在运行时追加到 window.BOOKS。
 """
 import json
@@ -16,9 +16,9 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'data/books/text/1987我们的红楼梦-欧阳奋强.md')
-OUT = os.path.join(ROOT, 'nverce/data/memoir.js')
+OUT = os.path.join(ROOT, 'data/memoir.js')
 
-# 原书章节标题 → 人物册 id（与 nverce/data/bridge.js 一致）
+# 原书章节标题 → 人物册 id（与 data/bridge.js 一致）
 MAP = {
     '林黛玉 陈晓旭': 'daiyu',
     '薛宝钗 张莉': 'baochai',
